@@ -1,0 +1,139 @@
+@charset "utf-8";
+.register {
+	width: 995px;
+	height: 492px;
+	margin: 0 auto;
+	padding: 65px 0;
+}
+.register h2{
+	font-weight: normal;
+	color: #999999;
+	font-size: 20px;
+	height: 45px;
+	border-bottom: 1px solid #CCCCCC;
+	margin-bottom: 36px;
+}
+.registerLeft{
+	position: relative;
+	width: 500px;
+	height: 400px;
+	float: left;
+	background: url(img/huiyuan.jpg) no-repeat;
+	background-size:cover ;
+}
+.login{
+	position: absolute;
+	margin: 0 auto;
+	left: 174px;
+	bottom:20px;
+	display: block;
+	width: 150px;
+	height: 46px;
+	line-height: 48px;
+	text-align: center;
+	border: 1px solid #64A131;
+	color: #64A131;
+	font-size: 17px;
+	border-radius:3px ;
+}
+.registerRight{
+	
+	float: right;
+	width: 490px;
+	color: #999999;
+}
+.registerRight p{
+	height: 66px;
+	line-height: 66px;
+	font-size: 15px;
+	position: relative;
+}
+.registerRight p .detection{
+	width: 22px;
+	height: 22px;
+	background:url(img/collection.png) no-repeat -528px 0;
+	position: absolute;
+	right: -36px;
+	top:22px;
+	display: none;
+}
+.registerRight i{
+	float: left;
+	font-style:normal;
+	width: 152px;
+	height: 100%;
+	text-align: right;
+	padding-right: 38px;
+}
+.registerRight label,.registerRight label a{
+	font-size: 15px;
+}
+.registerRight span{
+	float: right;
+}
+.positionRelative{
+	position: relative;
+}
+.tNum{
+	position: absolute;
+	display: block;
+	width: 60px;
+	height: 39px;
+	line-height: 40px;
+	right: 28px;
+	top: 13px;
+	text-align: center;
+	font-size: 12px;
+	color: black;
+}
+.tel,.psw{
+	width: 298px;
+	height: 38px;
+	border: 1px solid #ccc;
+}
+.testNum{
+	width: 266px;
+	height: 38px;
+	border: 1px solid #ccc;
+}
+.teltestNum{
+	width: 298px;
+	height: 38px;
+	background: #eee;
+	border: 1px solid #ccc;
+}
+.registerRight .pullLeft{
+	
+	float: left;
+}
+.registerRight .pullRight{
+	float: right;
+}.pullRight a{
+	text-decoration: underline;
+}
+.registerRight .pLast{
+	padding-top:15px ;
+	line-height: 36px;
+}
+.pLast .a1{
+	float: left;
+	width: 143px;
+	height: 38px;
+	background: #64A131;
+	text-align: center;
+	color: white;
+	font-size: 17px;
+	border-radius: 3px;
+}
+.pLast .a2{
+	float: right;
+	width: 141px;
+	height: 36px;
+	border:1px solid #64A131 ;
+	text-align: center;
+	color: #64A131;
+	background: #f5ffed;
+	font-size: 17px;
+	border-radius: 3px;
+}
+

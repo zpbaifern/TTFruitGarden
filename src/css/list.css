@@ -1,0 +1,186 @@
+@charset "utf-8";
+.sort {
+				width: 1280px;
+				min-height: 197px;
+				padding-top: 26px;
+				margin: 0 auto;
+			}
+			
+			.sort .p {
+				padding: 12px 0 6px;
+				border-bottom: 1px solid #CCCCCC;
+				box-sizing: border-box;
+				overflow: hidden;
+			}
+			
+			.sort .p h5 {
+				float: left;
+				width: 28px;
+				height: 24px;
+				line-height: 24px;
+				margin-right: 20px;
+				color: #999;
+			}
+			
+			.sort .p span {
+				float: left;
+				width: 28px;
+				height: 24px;
+				text-align: center;
+				line-height: 24px;
+				padding: 0 9px;
+				background: #64A131;
+				color: white;
+			}
+			
+			.sort .p div {
+				float: left;
+				width: 1182px;
+			}
+			
+			.sort .p div a {
+				padding: 0 9px;
+				color: #444;
+			}
+			
+			.sort .pLast {
+				border: 0;
+			}
+			
+			.sort .pLast div {
+				background: #eee;
+				height: 24px;
+				line-height: 24px;
+				color: #999;
+			}
+			
+			.content {
+				width: 1280px;
+				margin: 0 auto;
+				
+				padding-bottom: 112px;
+				overflow: hidden;
+			}
+			
+			.content .list {
+				float: left;
+				width: 1000px;
+			}
+			
+			.recentBrowse {
+				float: left;
+				padding-left: 20px;
+				width: 258px;
+			}
+			
+			.recentBrowse h5 {
+				color: #64A131;
+				height: 37px;
+				border-bottom: 1px solid #ccc;
+				line-height: 38px;
+			}
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			.lazy{
+				padding-top: 2px;
+				overflow: hidden;
+			}
+			.lazy li {
+				float: left;
+				margin: 0 2px 8px 4px; 
+				box-sizing: border-box;
+				position: relative;
+				cursor: pointer;
+			}
+			.lazy li span {
+				position: absolute;
+				left: 0;
+				top: 0;
+				padding: 6px;
+				color: white;
+				font-size: 14px;
+				background: #65a032;
+			}
+			
+			.lazyli:hover{
+				box-shadow: 0 0 15px 0 #CCCCCC;
+			}
+			.lazy .img {
+				width: 244px;
+				height: 244px;
+				background: url(../css/img/list1.jpg) no-repeat;
+				background-size: cover;
+			}
+			
+			.lazy .img a {
+				display: block;
+				height: 100%;
+			}
+			
+			.lazy .up {
+				height: 24px;
+				line-height: 24px;
+				margin-left: 6px;
+				margin-bottom: 5px;
+				overflow: hidden;
+				color: #555;
+			}
+			
+			.lazy .up label {
+				float: right;
+				color: #999999;
+			}
+			.lazy .down{
+				padding-top: 3px;
+				padding-left:6px ;
+				height: 34px;
+				line-height: 34px;
+				box-sizing: border-box;
+			}
+			.lazy .down label {
+				font-size: 13px;
+				font-family: 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+				height:22px;
+				text-align: center;height: 22px;
+				line-height: 22px;
+				padding-left: 6px;
+				padding-right: 6px;
+				line-height: 22px;
+				color: #999999;
+				margin-right: 6px;
+				cursor: pointer;
+				float: left;
+				box-sizing: border-box;
+				border-radius: 3px;
+			}
+			
+			.lazy .down .cur {
+				
+				background: #ef8;
+			}
+			
+			.lazy .down p {
+				float: right;
+				width: 34px;
+				height: 34px;
+				background: url(../css/img/collection.png) no-repeat right -242px;
+				margin: -5px 3px 5px -3px;
+			}
+			

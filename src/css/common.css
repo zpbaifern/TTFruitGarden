@@ -1,0 +1,687 @@
+@charset "utf-8";
+body,
+h1,h2,h3,h4,h5,h6,
+div,
+ul,
+li,
+dl,
+dt,
+dd,
+img,
+input,
+form,
+fieldset,
+table,th,tr,td,
+p,
+label,
+span,
+a {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-family: "微软雅黑";
+	font-size: 14px;
+	font-weight: normal;
+}
+
+body,
+html {
+	width: 100%;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: #999;
+}
+
+.topAll {
+	width: 100%;
+	height: 30px;
+	background: #eee;
+}
+
+.top {
+	width: 1280px;
+	margin: 0 auto;
+	height: 30px;
+	line-height: 30px;
+}
+
+.top .topDiv1 {
+	float: left;
+	width:111px;
+	position: relative;
+	font-size: 12px;
+	line-height: 30px;
+	color: #999;
+}
+.topDiv1 i{
+	font-style: normal;
+}
+.top .topDiv1 .topDiv1-son1 {
+	position: absolute;
+	width: 252px;
+	height: 380px;
+	left: 0;
+	top: 30px;
+	padding: 9px 15px 0 15px;
+	background: white;
+	overflow-y: scroll;
+	z-index: 1000000;
+	box-shadow: 0 4px 4px 4px #CCCCCC;
+	display: none;
+}
+
+.top .topDiv1 .topDiv1-son1 h3 {
+	height: 34px;
+	line-height: 34px;
+	color: #999999;
+	font-size: 14px;
+	font-weight: normal;
+}
+
+.top .topDiv1 .topDiv1-son1 .p1 {
+	height: 28px;
+	line-height: 28px;
+	background: #eee;
+	color:#444;;
+}
+
+.topDiv1 .topDiv1-son1 .p1 a:hover {
+	border: 0;
+	color: #64A131;
+	text-decoration: underline;
+}
+
+.topDiv1 .topDiv1-son1 p {
+	height: 34px;
+	border-bottom: 1px solid #eee;
+}
+
+.topDiv1 .topDiv1-son1 .liOut {
+	cursor: pointer;
+	border-bottom: 1px solid #ccc;
+	overflow: hidden;
+	color: #444;
+}
+
+.topDiv1 .topDiv1-son1 li ul {
+	display: none;
+}
+.top .topDiv1 a{
+	color: #444;
+}
+.top .topDiv1 li{
+	color: #444;
+}
+.topDiv1 .topDiv1-son1 li ul li {
+	border-top: 1px dashed #ccc;
+	
+	color: #444;
+}
+
+.topDiv1 .topDiv1-son1 li a {
+	float: left;
+}
+
+.topDiv1 .topDiv1-son1 li span {
+	font-weight: bold;
+	float: right;
+}
+
+.topDiv2 {
+	width: 368px;
+	height: 30px;
+	font-size: 12px;
+	line-height: 30px;
+	float: left;
+	color: #999
+}
+
+.topDiv2 a {
+	color: #64A131;
+	font-size: 12px;
+	text-decoration: none;
+}
+
+.topDiv2 a:hover {
+	text-decoration: underline;
+}
+.topDiv2 .loginState{
+	padding-left: 50px;
+}
+.topUl3 {
+	font-size: 12px;
+	float: right;
+}
+
+.topUl3 li {
+	color: #999;
+	float: left;
+	padding: 0 8px;
+	font-size: 12px;
+	cursor: pointer;
+}
+
+.topUl3 .nocursor {
+	cursor: auto;
+}
+
+.topUl3 .lifirst {
+	padding: 0;
+}
+
+.topUl3 li a {
+	color: #999;
+	font-size: 12px;
+}
+
+.lifirst a:hover{
+	color: orange;
+	text-decoration: underline;
+}
+.lithird:hover{
+	background: white;
+}
+.liforth a:hover{
+	color: orange;
+	text-decoration: underline;
+}
+.lififth:hover{
+	background: white;
+}
+.topUl3 .topUl3LiLast {
+	padding-right: 0;
+}
+
+.topUl3 .fruitPublicAll {
+	position: relative;
+}
+
+.fruitPublicAll .fruitPublic {
+	width: 240px;
+	height: 160px;
+	position: absolute;
+	right: 0;
+	top: 30px;
+	background: white;
+	color: #555;
+	font-size: 12px;
+	box-shadow: 0 10px 15px rgba(175, 175, 175, 0.75);
+	z-index: 10;
+	display: none;
+}
+
+.fruitPublic .fruitPublicUl {
+	padding: 9px 15px 0;
+}
+
+.fruitPublicUl li {
+	float: none;
+	width: 210px;
+	padding: 0;
+	border-bottom: 1px dashed #ccc;
+	height: 36px;
+	line-height: 36px;
+	font-size: 12px;
+	color: #555
+}
+
+.fruitPublicUl li a {
+	color: #555;
+	font-size: 12px;
+}
+
+.fruitPublicUl li em {
+	display: inline-block;
+	padding: 0 5px;
+	margin-left: 3px;
+	background: #f53030;
+	border-radius: 3px;
+	height: 16px;
+	font-size: 12px;
+	line-height: 16px;
+	color: #fff;
+	font-style: normal;
+}
+
+.fruitPublicAll .fruitPublic .readMore {
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+}
+
+.fruitPublicAll .fruitPublic .readMore a {
+	color: #64A131;
+}
+
+.topUl3 .phoneGardenAll {
+	position: relative;
+}
+
+.topUl3 .phoneGarden {
+	position: absolute;
+	top: 30px;
+	right: 0px;
+	width: 290px;
+	height: 290px;
+	padding: 10px 0 10px 15px;
+	background: #fff;
+	color: #555;
+	font-size: 12px;
+	box-shadow: 0 10px 15px rgba(175, 175, 175, 0.75);
+	z-index: 10;
+	display: none;
+}
+
+.topUl3 .text-center {
+	text-align: center;
+	color: #555;
+	font-size: 12px;
+	line-height: 30px;
+	cursor: pointer;
+}
+
+.topUl3 .color2 {
+	display: block;
+	color: #64A131;
+}
+
+.topUl3 .aFloatHidden {
+	float: left;
+	overflow: hidden;
+}
+
+.topUl3 .borderBottom {
+	border-bottom: 1px solid #eee;
+	margin-bottom: 15px;
+}
+
+.topUl3 .aFloatHidden dt img {
+	width: 100px;
+	height: 100px;
+}
+
+.topUl3 .aFloatHidden dd {
+	width: 147px;
+	padding-left: 16px;
+}
+
+.topUl3 .aFloat {
+	float: left;
+}
+
+.topUl3 .aFloat span {
+	height: 18px;
+	line-height: 18px;
+	margin-top: 20px;
+}
+
+.topUl3 .aFloat label {
+	display: block;
+	font-size: 12px;
+	height: 20px;
+	line-height: 20px;
+}
+
+.navAll {
+	width: 100%;
+	box-shadow: 0 0 2px 0 #ccc;
+}
+
+.nav {
+	width: 1280px;
+	margin: 0 auto;
+	padding-top: 23px;
+	height: 99px;
+}
+
+.nav .navLeft {
+	float: left;
+	width: 295px;
+	height: 74px;
+	background: url(img/footLeft1.png) no-repeat;
+	background-size: cover;
+}
+
+.nav .navMiddle {
+	float: left;
+	padding-left: 45px;
+	width: 500px;
+	height: 98px;
+	overflow: hidden;
+}
+
+.nav .navMiddle li {
+	float: left;
+	margin: 18px 0 0 0;
+	text-align: center;
+	height: 77px;
+}
+
+.nav .navMiddle li a {
+	display: block;
+	border-right: 1px solid #eee;
+	padding: 0 25px;
+	font-family: "微软雅黑";
+	color: #999
+}
+
+.nav .navMiddle .navLiLast a {
+	border: 0;
+}
+
+.nav .navMiddle li a:hover {
+	background: #eee;
+}
+
+.navMiddle li span {
+	display: block;
+}
+
+.navRight {
+	width: 254px;
+	height: 50px;
+	padding-top: 20px;
+	overflow: hidden;
+	float: right;
+	position: relative;
+	cursor: pointer;
+}
+
+.navRight .div1 {
+	width: 43px;
+	height: 43px;
+	position: absolute;
+	top: 20px;
+	right: 0;
+	color: white;
+	z-index: -2;
+}
+
+.navRight .div1 img {
+	height: 43px;
+	position: absolute;
+	left: 3px;
+	top: 0;
+	z-index: -1;
+}
+.navRight .div1 span{
+	display: block;
+	text-align: center;
+}
+
+.navRight .div2 {
+	width: 193px;
+	height: 26px;
+	border-bottom: 1px solid #ccc;
+	font-size:12px ;
+	overflow: hidden;
+}
+
+.navRight .div2 input {
+	width: 168px;
+	height: 21px;
+	float: left;
+	border: 0;
+	font-size:12px ;
+	padding-left: 4px;
+}
+
+.navRight .div2 img {
+	width: 20px;
+	height: 21px;
+	float: left;
+}
+
+.navRight .div3 {
+	width: 193px;
+	
+	font-size:12px ;
+	height: 26px;
+	line-height: 26px;
+	color: #999;
+}
+
+.navRight .div3 a {
+	color: #999;
+}
+
+.navRight .div3 a:hover {
+	text-decoration: underline;
+}
+
+
+
+
+
+
+
+.icon .promise {
+	width: 1280px;
+	margin: 0 auto;
+	padding: 20px 0 25px;
+	height: 60px;
+	overflow: hidden;
+	border: 1px solid #ccc;
+	border-right: 0;
+	border-left: 0;
+}
+
+.icon .promise li {
+	float: left;
+	display: block;
+	width: 24%;
+	height: 60px;
+	border-right: 1px solid #ccc;
+}
+
+.icon .promise .promiseliLast {
+	border: 0;
+}
+
+.foot {
+	width: 1280px;
+	margin: 0 auto;
+	padding: 20px 0 25px;
+	height: 155px;
+	overflow: hidden;
+	border-bottom: 1px solid #ccc;
+}
+
+.foot .footLeft {
+	width: 490px;
+	float: left;
+}
+
+.foot .footLeft img {
+	display: block;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.foot .footLeft .img1 {
+	width: 303px;
+}
+
+.foot .footLeft .img2 {
+	width: 159px;
+	padding: 7px 0;
+}
+
+.foot .footLeft span {
+	display: block;
+	text-align: center;
+	font-size: 18px;
+}
+
+.foot .footLeft label {
+	text-align: center;
+	font-size: 18px;
+	color: #999;
+	font-family: "microsoft yahei";
+}
+
+.footMiddleList,
+.footRightList {
+	overflow: hidden;
+	float: left;
+}
+
+.footMiddleList li {
+	float: left;
+	margin-right: 44px;
+	width: 130px;
+	text-align: center;
+	color: #999;
+}
+
+.footRightList li {
+	float: left;
+	padding-left: 30px;
+}
+
+.footRightList h4 {
+	margin-bottom: 20px;
+	font-size: 16px;
+	margin-top: 5px;
+	font-family: inherit;
+	font-weight: 500;
+	color: inherit;
+}
+
+.footRightList a {
+	display: block;
+	color: #999;
+	height: 30px;
+}
+
+.footRightList a:hover {
+	color: #64A131;
+	text-decoration: underline;
+}
+
+.footer {
+	width: 1280px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.footer h4 {
+	margin-top: 19px;
+	font-size: 14px;
+	color: #999;
+	font-weight: normal;
+}
+
+.footer p {
+	height: 34px;
+	line-height: 34px;
+	color: #64A131;
+}
+
+.footer a {
+	display: inline-block;
+	width: 64px;
+	text-align: center;
+	margin-bottom: 60px;
+}
+
+.footer img {
+	height: 47px;
+	width: auto;
+}
+.duiHuan {
+				position: fixed;
+				right: 0;
+				bottom: 74px;
+				width: 35px;
+			}
+			
+			.weiXin {
+				position: fixed;
+				right: 0;
+				bottom: 37px;
+				width: 35px;
+			}
+			
+			.backTop {
+				position: fixed;
+				right: 0;
+				bottom: 0;
+				width: 35px;
+			}
+.carAlert {
+				width: 524px;
+				height: 276px;
+				position: fixed;
+				left: 50%;
+				top: 50%;
+				background: url(../css/img/carAlert.jpg);
+				background-size: cover;
+				z-index: 100000000;
+				border: 8px solid rgba(0,0,0,0.4);
+				display: none;
+			}
+			
+			.carAlert span {
+				float: right;
+				width: 60px;
+				height: 40px;
+			}
+			
+			.carAlert p {
+				position: absolute;
+				bottom: 25px;
+				height: 46px;
+				width: 100%;
+				overflow: hidden;
+				text-align: center;
+			}
+			
+			.carAlert .a1 {
+				display: inline-block;
+				width: 145px;
+				border: 1px solid #64A131;
+				background: #fff;
+				border-radius: 5px;
+				text-align: center;
+				height: 38px;
+				line-height: 40px;
+				font-size: 16px;
+				color: #64A131;
+				padding: 0 6px;
+			}
+			
+			.carAlert .a2 {
+				display: inline-block;
+				width: 145px;
+				border: 1px solid #64A131;
+				background: #64A131;
+				border-radius: 5px;
+				text-align: center;
+				height: 38px;
+				line-height: 40px;
+				font-size: 16px;
+				color: white;
+				padding: 0 6px;
+			}
+			
+			.carInfo {
+				display: block;
+				width: 100%;
+				position: absolute;
+				text-align: center;
+				color: #CCCCCC;
+				bottom: 95px;
+				font-size: 18px;
+			}
+			
+			.carInfo label {
+				color: orange;
+				font-size: 16px;
+			}			
