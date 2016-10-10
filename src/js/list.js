@@ -29,7 +29,7 @@ var i=0;
 				
 				var $div1 = $("<div/>").addClass("img");
 				var $a = $("<a/>").attr({"href":"details.html"});
-				$div1.append($a).css({background: "url("+item.imgurl+") no-repeat"});
+				$div1.append($a).css({background: "url("+item.imgurlList+") no-repeat"});
 				
 				var $div2 = $("<div/>").addClass("up");
 				$div2.html(item.title);
@@ -101,6 +101,9 @@ var i=0;
 			
 			$(".lazy li").on("click",function(){
 				var detailFruitId = setCookie("detailFruitId",$(this).attr("xfruitId"),-1,"/");
+				var recentBrowserList = getCookie("recentBrowserList");
+				recentBrowserList += ","+$(this).attr("xfruitId");
+				setCookie("recentBrowserList",recentBrowserList,-1,"/");
 			});
 			typeClick();
 			smallCarLogoClick();
@@ -176,10 +179,11 @@ var i=0;
 				
 				var temp = $(this).closest("li").find(".up label").html();
 				temp = temp.substring(1);temp = parseFloat(temp).toFixed(2)-0;
+				var tempStr = temp.toFixed(2);
 				sum+=temp;
 				setCookie("sum",sum,-1,"/");//2、完成第2步，更新sum的cookie值
 				
-				var str = detailFruitId+","+temp+",1,";
+				var str = detailFruitId+","+tempStr+",1,";
 				var lastDouHao = buyList.lastIndexOf(",");
 				if(lastDouHao==buyList.length-1){
 					buyList+=str;}

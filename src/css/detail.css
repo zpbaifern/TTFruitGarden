@@ -352,6 +352,35 @@
 				border-bottom: 1px solid #ccc;
 				line-height: 38px;
 			}
+			.recentBrowseUl{
+				border: 1px solid #ccc;
+				border-top: 0;
+				
+			}
+			.recentBrowseUl li{
+				padding: 10px;
+				height: 70px;
+				border-bottom: 1px solid #ccc;
+				cursor: pointer;
+				overflow: hidden;
+			}
+			.recentBrowseUl li img{
+				height: 70px;
+				width: 70px;
+				float: left;
+			}
+			.recentBrowseUl li span{
+				float: left;
+				width: 100px;
+				height: 20px;
+				line-height: 20px;
+				padding-left:20px ;
+				color: #64A131;
+			}
+			.recentBrowseUl li span hover{
+				color: red;
+			}
+			
 			
 			.fixed {
 				width: 100%;

@@ -41,7 +41,6 @@ jQuery(function($) {
 
 					$tuul.html($img);
 					var $tuulImg = $(".tuul").find("img");
-
 					$li1.on("click", function() {
 						
 						i = $(this).index() + 1;
@@ -52,12 +51,11 @@ jQuery(function($) {
 						});
 						
 						$span.removeClass("active").eq(i - 1).addClass("active");
+						//$('.tuul').xfruit({position: 'right'});
 						
-						$('.tuul').xfruit({position: 'right'});
 					});
 					
-					$li1.first().on("click", function() {
-					}).trigger("click");
+					
 
 
 
@@ -128,6 +126,8 @@ jQuery(function($) {
 				}
 			});
 
+				 $('.tuul').xfruit({position: 'right'})
+		
 		}
 	});
 
@@ -190,7 +190,10 @@ jQuery(function($) {
 		var x = getCookie("detailFruitId");
 		
 		t+=$("#add").val()-0;
-		buyList = buyList+","+x+","
+		if(buyList.lastIndexOf(",") != buyList.length-1){
+			buyList = buyList+",";
+		}
+		buyList = buyList+x+","
 		buyList = buyList+$("#jq-price").html()+",";
 		buyList = buyList+$("#add").val()+",";
 		}else{

@@ -24,7 +24,7 @@
 			var $smallImg = $('img',$self);
 
 			// 如果没有data-big属性，则直接使用小图的src属性
-			var bigUrl = $smallImg.attr('data-big') || $smallImg.attr('src');
+			// var bigUrl = $smallImg.attr('data-big') || $smallImg.attr('src');
 
 			// 执行初始化操作
 			$smallImg.load(function(){
@@ -33,7 +33,9 @@
 
 			// 鼠标移入事件
 			$self.on('mouseenter',function(e){
-				
+				if(!$big){
+					return;
+				}
 				$big.appendTo('body');
 
 				// 把放大镜写入$self
@@ -50,6 +52,9 @@
 				$big.remove();
 				$min.remove();
 			}).on('mousemove',function(e){
+				if(!$big){
+					return;
+				}
 				var top = e.pageY - $smallImg.offset().top - $min.outerHeight()/2;
 				var left = e.pageX - $smallImg.offset().left - $min.outerWidth()/2;
 
@@ -82,12 +87,14 @@
 
 			// 初始化
 			function init(){
+				var bigUrl = $smallImg.attr('data-big') || $smallImg.attr('src');
+
 				// 添加全局类名xfruit
 				$self.addClass('xfruit').width($smallImg.outerWidth());
 
 				// 创建大图
 				$big = $('<div/>').addClass('xfruit-big');
-				$bigImg = $('<img/>').attr({src:bigUrl}).css({zIndex:10000000});
+				$bigImg = $('<img/>').attr({src:bigUrl}).css({zIndex:1000});
 
 				// 把大图写入页面
 				$big.append($bigImg).appendTo('body');

@@ -38,32 +38,75 @@ jQuery(function($){
 
 	$(".div1").find("span").html(total);	
 	
-//	//检查代表最近浏览清单的recentBrowserList是否存在，如果没有，则创建并赋值为空字符串,若有就整理
-//		var recentBrowserList = getCookie("recentBrowserList");
-//		if(!recentBrowserList){
-//			var recentBrowserList ="";
-//			setCookie("recentBrowserList",recentBrowserList,-1,"/");
-//		}else{
-//			
-//			var arr = .split(",");
-//			if(arr[0]==","){
-//				arr.shift();
-//			}
-//			for (var i = 0;i < length-1;i++) {
-//				for (var j = i+1;j < length;j++){
-//					if(arr[i] == arr[j]){
-//						arr.splice(j,1);
-//						i--;
-//						j--;
-//					}
-//				}
-//			}
-//			alert(arr);
-//			recentBrowserList = arr.join(",");
-//			setCookie("recentBrowserList",recentBrowserList,-1,"/");
-//			
-//			
-//		}
+	//检查代表最近浏览清单的recentBrowserList是否存在，如果没有，则创建并赋值为空字符串,若有就整理
+		var recentBrowserList = getCookie("recentBrowserList");
+		console.log(recentBrowserList);
+		if(!recentBrowserList){
+			var recentBrowserList ="";
+			setCookie("recentBrowserList",recentBrowserList,-1,"/");
+		}else{
+				
+				var arr = recentBrowserList.split(",");
+				if(!arr[0]){
+					arr.shift();
+				}
+				
+				if(arr.length>=6){
+					arr = arr.slice(arr.length-5);
+				}
+				console.log("liulan: "+arr);
+				
+				
+				var currentIndex = 0;
+				recentBrowser();
+				function recentBrowser(){
+					
+					if(currentIndex>=arr.length)
+					{return}
+					$.ajax({
+						url:"../../../data/listGoods.json",
+						dataType:"json",
+						success:function(res){
+							console.log(arr[currentIndex]);
+							$.each(arr, function(idx,item) {
+								if(arr[currentIndex] == item.xfruitId){
+									console.log(item.xfruitId);
+									var $img = $("<img/>").css({background:item.imgurlContentList}).attr("xfruitId",item.xfruitId);
+									var $span1 = $("<span/>").html(item.tite);
+									var $span2 = $("<span/>").html(item.intro);
+									
+									var $li = $("<li/>").attr("xfruitId",item.xfruitId);
+									$li.append($img).append($span1).append($span2);
+									$li.prependTo($(".recentBrowseUl"));
+								}
+							});
+							currentIndex+=1;
+							recentBrowser();//调用函数自己
+						}
+					});
+					
+					console.log(recentBrowserList);
+					
+					
+				}
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				recentBrowserList = arr.join(",");
+				setCookie("recentBrowserList",recentBrowserList,-1,"/");
+				
+			
+		}
+		
 		
 	
 	

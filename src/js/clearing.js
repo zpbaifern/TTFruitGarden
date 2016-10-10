@@ -6,6 +6,9 @@ jQuery(function($){
 	if(buyList.indexOf(0) == ","){
 		buyList = buyList.substring(1);
 	}
+	if(buyList.lastIndexOf() == ","){
+		buyList = buyList.substring(0,buyList.length-1);
+	}
 	console.log(buyList);
 	
 	//调用toArray函数，传进经过修整，格式符合规范的buyList字符串作为参数，返回处理好了的数组
