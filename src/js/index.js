@@ -1,4 +1,4 @@
-jQuery(function($){
+jQuery(function($) {
 
 	//首页导航样式初始化
 	var $navMiddle = $(".navMiddle");
@@ -11,7 +11,6 @@ jQuery(function($){
 	$navMiddle.find("li").eq(0).find("span").css({
 		color: "#64A131"
 	});
-
 
 	//轮播图
 	var $carousel = $(".carousel");
@@ -134,10 +133,8 @@ jQuery(function($){
 			var $span = $targetUl1.find("li p span");
 			smallCarLogoClick($span);
 			$targetUl1.find("li").on("click", function() {
-				detailFruitId = setCookie("detailFruitId", $(this).attr("xfruitId"), -1, "/");
-				var recentBrowserList = getCookie("recentBrowserList");
-				recentBrowserList += ","+$(this).attr("xfruitId");
-				setCookie("recentBrowserList",recentBrowserList,-1,"/");
+				var $self = $(this);
+				recentBroswerRepeatCheck($self);
 			});
 		}
 	});
@@ -192,15 +189,12 @@ jQuery(function($){
 				$targetUl2.append($li);
 
 			});
-						enlarge();
+			enlarge();
 			var $span = $targetUl2.find("li p span");
 			smallCarLogoClick($span);
 			$targetUl2.find("li").on("click", function() {
-
-				detailFruitId = setCookie("detailFruitId", $(this).attr("xfruitId"), -1, "/");
-				var recentBrowserList = getCookie("recentBrowserList");
-				recentBrowserList += ","+$(this).attr("xfruitId");
-				setCookie("recentBrowserList",recentBrowserList,-1,"/");
+				var $self = $(this);
+				recentBroswerRepeatCheck($self);
 			});
 		}
 	});
@@ -253,15 +247,12 @@ jQuery(function($){
 				$targetUl3.append($li);
 
 			});
-						enlarge();
+			enlarge();
 			var $span = $targetUl3.find("li p span");
 			smallCarLogoClick($span);
 			$targetUl3.find("li").on("click", function() {
-
-				detailFruitId = setCookie("detailFruitId", $(this).attr("xfruitId"), -1, "/");
-				var recentBrowserList = getCookie("recentBrowserList");
-				recentBrowserList += ","+$(this).attr("xfruitId");
-				setCookie("recentBrowserList",recentBrowserList,-1,"/");
+				var $self = $(this);
+				recentBroswerRepeatCheck($self);
 			});
 		}
 	});
@@ -314,25 +305,19 @@ jQuery(function($){
 				$targetUl4.append($li);
 
 			});
-						enlarge();
+			enlarge();
 			var $span = $targetUl4.find("li p span");
 			smallCarLogoClick($span);
 			$targetUl4.find("li").on("click", function() {
-
-				detailFruitId = setCookie("detailFruitId", $(this).attr("xfruitId"), -1, "/");
-				var recentBrowserList = getCookie("recentBrowserList");
-				recentBrowserList += ","+$(this).attr("xfruitId");
-				setCookie("recentBrowserList",recentBrowserList,-1,"/");
+				var $self = $(this);
+				recentBroswerRepeatCheck($self);
 			});
 		}
 	});
 
-
-	
-
 	//初始化购物车弹框的位置
 	var $carAlert = $(".carAlert");
-	
+
 	$carAlert.css({
 		"margin-left": -$carAlert.width() / 2,
 		"margin-top": -$carAlert.height() / 2
@@ -343,36 +328,42 @@ jQuery(function($){
 	$spanClose.on("click", function() {
 		$carAlert.fadeOut();
 		var $littleCarLogo = $(".littleCarLogo");
-		$littleCarLogo.css({backgroundPosition:"-516px -242px"});
+		$littleCarLogo.css({
+			backgroundPosition: "-516px -242px"
+		});
 	});
 	$aContinue.on("click", function() {
 		$carAlert.fadeOut();
 		var $littleCarLogo = $(".littleCarLogo");
-		$littleCarLogo.css({backgroundPosition:"-516px -242px"});
+		$littleCarLogo.css({
+			backgroundPosition: "-516px -242px"
+		});
 	});
-	$(window).on("keydown",function(e){
-		if(e.keyCode == 13){
-		$carAlert.fadeOut();
-		var $littleCarLogo = $(".littleCarLogo");
-		$littleCarLogo.css({backgroundPosition:"-516px -242px"});
+	$(window).on("keydown", function(e) {
+		if(e.keyCode == 13) {
+			$carAlert.fadeOut();
+			var $littleCarLogo = $(".littleCarLogo");
+			$littleCarLogo.css({
+				backgroundPosition: "-516px -242px"
+			});
 		}
 	});
 
 });
 
 //商品图片被鼠标悬停时，呈中心放大的动画函数
-function enlarge(){
+function enlarge() {
 	var $contentImg = $(".content li div img");
 	var iWidth = $contentImg.width();
 	var iHeight = $contentImg.height();
-	$contentImg.on("mouseenter",function(){
+	$contentImg.on("mouseenter", function() {
 		$(this).stop().animate({
 			left: -10,
 			top: -10,
 			width: iWidth + 20,
 			height: iHeight + 20
 		});
-	}).on("mouseleave",function(){
+	}).on("mouseleave", function() {
 		$(this).stop().animate({
 			left: 0,
 			top: 0,
@@ -388,8 +379,12 @@ function smallCarLogoClick($span) {
 		$(this).on("click", function(event) {
 			event.stopPropagation();
 			//点中的那个小购物车图标背景图切换
-			$(this).css({backgroundPosition:"-514px -291px"});
-			$(".carAlert").css({display:"block"});
+			$(this).css({
+				backgroundPosition: "-514px -291px"
+			});
+			$(".carAlert").css({
+				display: "block"
+			});
 			var detailFruitId = $(this).closest("li").attr("xfruitId");
 			setCookie("detailFruitId", detailFruitId, -1, "/");
 			var total = parseInt(getCookie("total"));
@@ -419,15 +414,15 @@ function smallCarLogoClick($span) {
 			//购物车读取total，sum 的cookie信息
 			var total = getCookie("total") - 0;
 			var sum = getCookie("sum") - 0;
-			if(!total){
+			if(!total) {
 				total = 0;
 			}
-			if(!sum){
+			if(!sum) {
 				sum = 0;
 			}
 			sum = sum.toFixed(2);
-			setCookie("total",total,-1,"/");
-			setCookie("sum",sum,-1,"/");
+			setCookie("total", total, -1, "/");
+			setCookie("sum", sum, -1, "/");
 			$(".carInfo label").first().html(total);
 			$(".carInfo label").last().html(sum);
 			$(".div1").find("span").html(total);
@@ -436,3 +431,4 @@ function smallCarLogoClick($span) {
 		});
 	});
 }
+

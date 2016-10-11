@@ -46,7 +46,6 @@ jQuery(function($) {
 						i = $(this).index() + 1;
 						$tuulImg.attr({
 							"src": "../css/img/" + detailFruitId + "_" + (i + item.imgurlCollection.length / 2) + ".jpg",
-							
 							"data-big": "../css/img/" + detailFruitId + "_" + (i + item.imgurlCollection.length / 2) + ".jpg"
 						});
 						
@@ -179,10 +178,40 @@ jQuery(function($) {
 //购物车读取total，sum 的cookie信息
 		$(".carInfo label").first().html(getCookie("total"));
 		$(".carInfo label").last().html(getCookie("sum"));
+//给立即购买按钮绑定点击事件，点击一下使得total+1，sum+标价，购物车弹框显示，并获取水果id、规格及件数，把其信息添加到结算页的内容中
+	
+	$(".fr-buy").on("click",function(){
+		if($("#jq-price").html()!=""){
+		var t = getCookie("total")-0;
+		var buyList = getCookie("buyList");
+		var x = getCookie("detailFruitId");
+		
+		t+=$("#add").val()-0;
+		if(buyList.lastIndexOf(",") != buyList.length-1){
+			buyList = buyList+",";
+		}
+		buyList = buyList+x+","
+		buyList = buyList+$("#jq-price").html()+",";
+		buyList = buyList+$("#add").val()+",";
+		}else{
+			t=0;
+			buyList="";
+		}
+		console.log(buyList);
+		setCookie("total",t,-1,"/");
+		setCookie("buyList",buyList,-1,"/");
+		
+		var s = getCookie("sum")-0;
+		var times = $("#add").val()-0;
+		s+=($("#jq-price").html()-0)*times;
+		s = s.toFixed(2);
+		
+		setCookie("sum",s,-1,"/");
+	});
 
 	//给加入购物车按钮绑定点击事件，点击一下使得total+1，sum+标价，购物车弹框显示，并获取水果id、规格及件数，把其信息添加到结算页的内容中
 	
-	$(".fr-add").on("click",function(){
+	$(".fr-add"),$(".fr-add2").on("click",function(){
 		if($("#jq-price").html()!=""){
 		var t = getCookie("total")-0;
 		var buyList = getCookie("buyList");
@@ -211,8 +240,6 @@ jQuery(function($) {
 		setCookie("sum",s,-1,"/");
 		
 		
-		
-		
 		//购物车读取total，sum 的cookie信息
 		$(".carInfo label").first().html(getCookie("total"));
 		$(".carInfo label").last().html((getCookie("sum")-0).toFixed(2));
@@ -221,6 +248,21 @@ jQuery(function($) {
 		$(".carAlert").fadeIn();
 	});
 	
+	
+	//给固定定位条的滚动条中的“商品简介”、“顾客评论”绑定点击事件
+$(".fixed").on("click","span",function(){
+	$(this).addClass("spanActive").siblings("span").removeClass("spanActive");
+	
+	if($(this).index()==0){
+		$("#showImg").css({display:"block"});
+		$("#showComment").css({display:"none"});
+	}else if($(this).index() == 1){
+		$("#showImg").css({display:"none"});
+		$("#showComment").css({display:"block"});
+	}
+});
 
 
 });
+
+

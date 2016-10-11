@@ -105,11 +105,15 @@
 }
 .li2 span{
 	cursor:pointer;
+	font-weight: bold;
+	color: #64A131;
+}
+.li2 span:hover{
+	color: red;
 }
 .clearing .li3 {
 	width: 69px;
 }
-
 .clearing .li4 {
 	width: 114px;
 }
@@ -247,7 +251,9 @@
 .interestedGoods .interestedList li:hover {
 	box-shadow: 0 0 12px 0 #CCCCCC;
 }
-
+.interestedGoods .interestedList li:hover .up{
+	color: red;
+}
 .interestedGoods .interestedList .img {
 	width: 166px;
 	height: 166px;
@@ -261,17 +267,13 @@
 }
 
 .interestedList .up {
-	height: 24px;
-	line-height: 24px;
+	height: 20px;
+	line-height: 20px;
 	margin: 0 3px;
-	margin-top: 15px;
+	margin-top: 8px;
 	overflow: hidden;
-	color: #555;
-}
-
-.interestedList .up span {
-	float: right;
-	color: #999999;
+	color:#64A131;
+	font-weight:bold;
 }
 
 .interestedList .down {
@@ -283,15 +285,12 @@
 }
 
 .interestedList .down label {
-	height: 22px;
+	height: 20px;
 	text-align: center;
 	line-height: 20px;
-	padding-left: 5px;
-	padding-right: 5px;
-	font-size: 13px;
+	font-size: 14px;
 	font-family: 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
-	line-height: 22px;
-	color: #999999;
+	color: #999;
 	margin-right: 18px;
 	cursor: pointer;
 	float: left;

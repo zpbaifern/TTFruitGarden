@@ -15,7 +15,7 @@ jQuery(function($){
 			
 
 
-//检查代表购买商品总件数的total、代表总付费金额的sum是否已存在，如果没有，则分别创建并赋值为0		
+		//检查代表购买商品总件数的total、代表总付费金额的sum是否已存在，如果没有，则分别创建并赋值为0		
 		var total  = getCookie("total");
 		var sum  = getCookie("sum");
 		
@@ -69,7 +69,8 @@ jQuery(function($){
 								
 								$.each(res, function(idx,item) {
 									if(arr[currentIndex] == item.xfruitId){
-										var $img = $("<img/>").css({background:"url("+item.imgurlContentList+") no-repeat",backgroundSize:"cover"}).attr("xfruitId",item.xfruitId);
+										//list页，details页的最近浏览
+										var $img = $("<img/>").css({background:"url("+item.imgurlList+") no-repeat",backgroundSize:"cover"}).attr("xfruitId",item.xfruitId);
 										var $span1 = $("<span/>").html(item.title).css({"fontWeight":"bold",width:"120px"});
 										var $span2 = $("<span/>").html(item.intro).css({"color":"#ccc",width:"148px"});
 										var $a =$("<a/>").attr("href","details.html").css({display:"block",overflow:"hidden"});
@@ -77,6 +78,24 @@ jQuery(function($){
 										$a.append($img).append($span1).append($span2);
 										$li.append($a)
 										$li.prependTo($(".recentBrowseUl"));
+										//clearing页的你可能感兴趣
+//											
+										var $interestedList = $(".interestedList");
+										
+										var $listli = $("<li/>").attr("xfruitId",item.xfruitId);
+										var $divImg =$("<div/>").addClass("img").css({background:"url("+item.imgurlList+") no-repeat",backgroundSize:"cover"});
+										var $a = $("<a/>").attr({href:"details.html"});
+										$divImg.append($a);
+										
+										var $divUp = $("<div/>").addClass("up").html(item.title);
+										
+										var $divDown = $("<div/>").addClass("down");
+										var $label = $("<label/>").html(item.price);
+										$divDown.append($label);
+										
+										
+										$listli.append($divImg).append($divUp).append($divDown);
+										$interestedList.append($listli);
 									}
 								});
 								currentIndex+=1;
@@ -130,8 +149,10 @@ jQuery(function($){
 	
 	//热门城市中的a被点击，所在地区就会改变为该地区
 	$topDiv1son1.find("p").eq(0).find("a").on("click",function(){
-		$topDiv1.find("i").html($(this).html());
+		var targetField = $(this).html();
+		$topDiv1.find("i").html(targetField);
 		$topDiv1son1.css({display:"none"});
+		setCookie("targetField",targetField,-1,"/");
 	});
 	
 	//设置外壳li悬停效果
@@ -174,12 +195,12 @@ jQuery(function($){
 		});
 		//设置内里li点击效果
 		$(this).find("ul").children("li").on("click",function(){
-			$(".topDiv1_I").html($(this).html());
+			var targetField = $(this).html();    
+			$(".topDiv1_I").html(targetField);
 			$topDiv1son1.hide();
+			setCookie("targetField",targetField,-1,"/");
 		});
 		}
-		var targetField = $(".topDiv1_I").html();
-		setCookie("targetField",targetField,-1,"/");
 		$topDiv1son1.hide();
 	});
 	
@@ -214,16 +235,44 @@ jQuery(function($){
 });
 
 
-
 function recentBroswerClick(){
+	//最近浏览列表的点击和你可能感兴趣的列表的点击设置相同效果
+	//最近浏览列表的点击
 	$(".recentBrowseUl").on("click","li",function(){
+		var detailFruitId = $(this).attr("xfruitId");
+		setCookie("detailFruitId",detailFruitId,-1,"/");
+	});
+	//你可能感兴趣的列表的点击
+	$(".interestedList").on("click","li",function(){
 		var detailFruitId = $(this).attr("xfruitId");
 		setCookie("detailFruitId",detailFruitId,-1,"/");
 	});
 }
 
 
-
+function recentBroswerRepeatCheck($self) {
+	var detailFruitId = setCookie("detailFruitId", $self.attr("xfruitId"), -1, "/");
+	var recentBrowserList = getCookie("recentBrowserList");
+	var arr = recentBrowserList.split(",");
+	if(arr.length >= 2) {
+		if(!arr[0]) {
+			arr.shift();
+		}
+		for(var i = 0; i < arr.length; i++) {
+			if(arr[i] == $self.attr("xfruitId")) {
+				arr.splice(i, 1);
+				i--;
+			}
+		}
+		recentBrowserList = arr.join(",");
+		console.log(recentBrowserList);
+		recentBrowserList += "," + $self.attr("xfruitId");
+		console.log(recentBrowserList);
+	} else {
+		recentBrowserList += "," + $self.attr("xfruitId");
+	}
+	setCookie("recentBrowserList", recentBrowserList, -1, "/");
+}
 
 
 
@@ -246,7 +295,7 @@ function recentBroswerClick(){
 //设置cookie
 function setCookie(name,value,expires,path,domain,secure){
 	//name=value
-	var cookieText = encodeURIComponent(name) +"="+ encodeURIComponent(value);
+	var cookieText = name +"="+ value;
 	//失效时间expires=date
 	if(expires instanceof Date){
 		cookieText += ";expires="+expires;

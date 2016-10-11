@@ -346,6 +346,7 @@
 				width: 100%;
 				font-size: 16px;
 				position: absolute;
+				border: 0;
 				top: 0;
 				background: #f1f1f1;
 				overflow: hidden;
