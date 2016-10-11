@@ -24,7 +24,7 @@ jQuery(function($){
 		}
 		$.ajax({
 			async:"false",
-			url:"../../../data/detailGoods.json",
+			url:"../../../data/Goods.json",
 			dataType: "json",
 			success: function(res) {
 				
@@ -32,7 +32,7 @@ jQuery(function($){
 				
 					if(item.xfruitId == a[currentIndex])
 					{
-						var $img = $("<img/>").attr({"src":item.imgurl[0],"xFruid":a[currentIndex]});
+						var $img = $("<img/>").attr({"src":item.imgurlCollection[0],"xFruid":a[currentIndex]});
 						var $li1 = $("<li/>").addClass("li1 paddingTop10").attr("xFruid",a[currentIndex]);
 						$li1.html($img);
 						

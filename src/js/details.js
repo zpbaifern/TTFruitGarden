@@ -13,16 +13,16 @@ jQuery(function($) {
 
 	var detailFruitId = getCookie("detailFruitId");
 	$.ajax({
-		url: "../../../data/detailGoods.json",
+		url: "../../../data/Goods.json",
 		dataType: "json",
 		success: function(res) {
 
 			$.each(res, function(idx, item) {
 				if(item.xfruitId == detailFruitId) {
 
-					for(var j = 0; j < item.imgurl.length / 2; j++) {
+					for(var j = 0; j < item.imgurlCollection.length / 2; j++) {
 						$dianImg = $("<img/>").attr({
-							"src": item.imgurl[j]
+							"src": item.imgurlCollection[j]
 						});
 						$span1 = $("<span/>").html('<img src="../css/img/panel.png">');
 						$li = $("<li/>");
@@ -35,8 +35,8 @@ jQuery(function($) {
 
 					var $li1 = $(".dianul li");
 					var $img = $("<img/>").attr({
-						"src": item.imgurl[item.imgurl.length / 2],
-						"data-big": item.imgurl[item.imgurl.length / 2]
+						"src": item.imgurlCollection[item.imgurlCollection.length / 2],
+						"data-big": item.imgurlCollection[item.imgurlCollection.length / 2]
 					});
 
 					$tuul.html($img);
@@ -45,13 +45,12 @@ jQuery(function($) {
 						
 						i = $(this).index() + 1;
 						$tuulImg.attr({
-							"src": "../css/img/" + detailFruitId + "_" + (i + item.imgurl.length / 2) + ".jpg",
+							"src": "../css/img/" + detailFruitId + "_" + (i + item.imgurlCollection.length / 2) + ".jpg",
 							
-							"data-big": "../css/img/" + detailFruitId + "_" + (i + item.imgurl.length / 2) + ".jpg"
+							"data-big": "../css/img/" + detailFruitId + "_" + (i + item.imgurlCollection.length / 2) + ".jpg"
 						});
 						
 						$span.removeClass("active").eq(i - 1).addClass("active");
-						//$('.tuul').xfruit({position: 'right'});
 						
 					});
 					

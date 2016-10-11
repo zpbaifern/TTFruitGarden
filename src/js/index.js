@@ -82,7 +82,7 @@ jQuery(function($){
 	//列表1 
 
 	$.ajax({
-		url: "../../../data/indexGoods.json",
+		url: "../../../data/Goods.json",
 		dataType: "json",
 		success: function(res) {
 			var $targetUl1 = $("#contentList1");
@@ -134,14 +134,16 @@ jQuery(function($){
 			var $span = $targetUl1.find("li p span");
 			smallCarLogoClick($span);
 			$targetUl1.find("li").on("click", function() {
-
 				detailFruitId = setCookie("detailFruitId", $(this).attr("xfruitId"), -1, "/");
+				var recentBrowserList = getCookie("recentBrowserList");
+				recentBrowserList += ","+$(this).attr("xfruitId");
+				setCookie("recentBrowserList",recentBrowserList,-1,"/");
 			});
 		}
 	});
 	//列表2
 	$.ajax({
-		url: "../../../data/indexGoods.json",
+		url: "../../../data/Goods.json",
 		dataType: "json",
 		success: function(res) {
 			var $targetUl2 = $("#contentList2");
@@ -196,12 +198,15 @@ jQuery(function($){
 			$targetUl2.find("li").on("click", function() {
 
 				detailFruitId = setCookie("detailFruitId", $(this).attr("xfruitId"), -1, "/");
+				var recentBrowserList = getCookie("recentBrowserList");
+				recentBrowserList += ","+$(this).attr("xfruitId");
+				setCookie("recentBrowserList",recentBrowserList,-1,"/");
 			});
 		}
 	});
 	//列表3
 	$.ajax({
-		url: "../../../data/indexGoods.json",
+		url: "../../../data/Goods.json",
 		dataType: "json",
 		success: function(res) {
 			var $targetUl3 = $("#contentList3");
@@ -254,12 +259,15 @@ jQuery(function($){
 			$targetUl3.find("li").on("click", function() {
 
 				detailFruitId = setCookie("detailFruitId", $(this).attr("xfruitId"), -1, "/");
+				var recentBrowserList = getCookie("recentBrowserList");
+				recentBrowserList += ","+$(this).attr("xfruitId");
+				setCookie("recentBrowserList",recentBrowserList,-1,"/");
 			});
 		}
 	});
 	//列表4 
 	$.ajax({
-		url: "../../../data/indexGoods.json",
+		url: "../../../data/Goods.json",
 		dataType: "json",
 		success: function(res) {
 			var $targetUl4 = $("#contentList4");
@@ -312,6 +320,9 @@ jQuery(function($){
 			$targetUl4.find("li").on("click", function() {
 
 				detailFruitId = setCookie("detailFruitId", $(this).attr("xfruitId"), -1, "/");
+				var recentBrowserList = getCookie("recentBrowserList");
+				recentBrowserList += ","+$(this).attr("xfruitId");
+				setCookie("recentBrowserList",recentBrowserList,-1,"/");
 			});
 		}
 	});

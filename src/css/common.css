@@ -455,7 +455,48 @@ a {
 	text-decoration: underline;
 }
 
-
+.recentBrowse {
+				padding-left: 20px;
+				width: 258px;
+				margin-top: 68px;
+				float: left;
+			}
+			
+			.recentBrowse h3 {
+				color: #64A131;
+				font-size: 15px;
+				height: 37px;
+				border-bottom: 6px solid #ccc;
+				line-height: 38px;
+				font-weight: bold;
+			}
+			.recentBrowseUl{
+				border: 1px solid #ccc;
+				border-top: 0;
+				border-bottom: 0;
+			}
+			.recentBrowseUl li{
+				padding: 10px;
+				height: 70px;
+				border-bottom: 1px solid #ccc;
+				cursor: pointer;
+				overflow: hidden;
+			}
+			.recentBrowseUl li img{
+				height: 70px;
+				width: 70px;
+				float: left;
+			}
+			.recentBrowseUl li span{
+				float: left;
+				height: 24px;
+				line-height: 24px;
+				padding-left:18px ;
+				color: #64A131;
+			}
+			.recentBrowseUl li:hover span{
+				color: red;
+			}
 
 
 

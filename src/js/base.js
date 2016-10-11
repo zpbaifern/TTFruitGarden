@@ -5,7 +5,7 @@ jQuery(function($){
 		sum  = getCookie("sum");
 		
 //		var buyList = getCookie("buyList");
-		alert(2);
+
 		if(total==""){
 			
 			setCookie("total",0);

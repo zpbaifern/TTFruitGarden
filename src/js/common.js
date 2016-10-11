@@ -41,73 +41,55 @@ jQuery(function($){
 	//检查代表最近浏览清单的recentBrowserList是否存在，如果没有，则创建并赋值为空字符串,若有就整理
 		var recentBrowserList = getCookie("recentBrowserList");
 		console.log(recentBrowserList);
-		if(!recentBrowserList){
-			var recentBrowserList ="";
-			setCookie("recentBrowserList",recentBrowserList,-1,"/");
-		}else{
-				
-				var arr = recentBrowserList.split(",");
-				if(!arr[0]){
-					arr.shift();
-				}
-				
-				if(arr.length>=6){
-					arr = arr.slice(arr.length-5);
-				}
-				console.log("liulan: "+arr);
-				
-				
-				var currentIndex = 0;
-				recentBrowser();
-				function recentBrowser(){
-					
-					if(currentIndex>=arr.length)
-					{return}
-					$.ajax({
-						url:"../../../data/listGoods.json",
-						dataType:"json",
-						success:function(res){
-							console.log(arr[currentIndex]);
-							$.each(arr, function(idx,item) {
-								if(arr[currentIndex] == item.xfruitId){
-									console.log(item.xfruitId);
-									var $img = $("<img/>").css({background:item.imgurlContentList}).attr("xfruitId",item.xfruitId);
-									var $span1 = $("<span/>").html(item.tite);
-									var $span2 = $("<span/>").html(item.intro);
-									
-									var $li = $("<li/>").attr("xfruitId",item.xfruitId);
-									$li.append($img).append($span1).append($span2);
-									$li.prependTo($(".recentBrowseUl"));
-								}
-							});
-							currentIndex+=1;
-							recentBrowser();//调用函数自己
-						}
-					});
-					
-					console.log(recentBrowserList);
-					
-					
-				}
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				recentBrowserList = arr.join(",");
+			if(!recentBrowserList){
+				var recentBrowserList ="";
 				setCookie("recentBrowserList",recentBrowserList,-1,"/");
-				
-			
-		}
+			}else{
+					var arr = recentBrowserList.split(",");
+					if(!arr[0]){
+						arr.shift();
+					}
+					
+					if(arr.length>=6){
+						arr = arr.slice(arr.length-5);
+					}
+					console.log("liulan: "+arr);
+					
+					
+					var currentIndex = 0;
+					recentBrowser();
+					function recentBrowser(){
+						
+						if(currentIndex>=arr.length)
+						{return}
+						$.ajax({
+							url:"../../../data/Goods.json",
+							dataType:"json",
+							success:function(res){
+								
+								$.each(res, function(idx,item) {
+									if(arr[currentIndex] == item.xfruitId){
+										var $img = $("<img/>").css({background:"url("+item.imgurlContentList+") no-repeat",backgroundSize:"cover"}).attr("xfruitId",item.xfruitId);
+										var $span1 = $("<span/>").html(item.title).css({"fontWeight":"bold",width:"120px"});
+										var $span2 = $("<span/>").html(item.intro).css({"color":"#ccc",width:"148px"});
+										var $a =$("<a/>").attr("href","details.html").css({display:"block",overflow:"hidden"});
+										var $li = $("<li/>").attr("xfruitId",item.xfruitId);
+										$a.append($img).append($span1).append($span2);
+										$li.append($a)
+										$li.prependTo($(".recentBrowseUl"));
+									}
+								});
+								currentIndex+=1;
+								recentBrowserList = arr.join(",");
+								setCookie("recentBrowserList",recentBrowserList,-1,"/");
+								recentBrowser();//调用函数自己
+							}
+						});
+						
+					}
+			}
 		
-		
+		recentBroswerClick();
 	
 	
 	//检查登录状态，若已登录则提示已登录|退出，否则显示未登录  
@@ -230,6 +212,32 @@ jQuery(function($){
 
 	
 });
+
+
+
+function recentBroswerClick(){
+	$(".recentBrowseUl").on("click","li",function(){
+		var detailFruitId = $(this).attr("xfruitId");
+		setCookie("detailFruitId",detailFruitId,-1,"/");
+	});
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

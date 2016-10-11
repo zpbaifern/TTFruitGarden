@@ -1,5 +1,11 @@
 jQuery(function($){
 
+
+
+
+
+
+
 //限制加载次数
 var i=0;
 	
@@ -14,7 +20,7 @@ var i=0;
 
 //加载商品(懒加载)
 	$.ajaxSetup({
-		url:"../../../data/listGoods.json",
+		url:"../../../data/Goods.json",
 		dataType: "json",
 		success:function(res){
 			
@@ -40,15 +46,15 @@ var i=0;
 				
 				
 				
-				if(item.bigPrice){
+				if(item.bigPriceAll){
 					
-				$label.html(item.bigPrice);
+				$label.html(item.bigPriceAll);
 				
 				var $div3 = $("<div/>").addClass("down");
 				$label1 = $("<label/>").addClass("cur").html(item.big);
 				$label2 = $("<label/>").html(item.small);
-				$label1.addClass("big").attr({bigPrice:(item.bigPrice+"")});
-				$label2.addClass("small").attr({smallPrice:(item.smallPrice+"")});
+				$label1.addClass("big").attr({bigPriceAll:(item.bigPriceAll+"")});
+				$label2.addClass("small").attr({smallPriceAll:(item.smallPriceAll+"")});
 				var $p = $("<p/>").addClass("littleCarLogo");
 				$div3.append($label1);
 				$div3.append($label2);
@@ -57,7 +63,7 @@ var i=0;
 				
 				}else{
 					
-					$label.html(item.smallPrice);
+					$label.html(item.smallPriceAll);
 					
 					var $div3 = $("<div/>").addClass("down");
 					$label1 = $("<label/>").addClass("cur").html(item.small);
@@ -91,19 +97,19 @@ var i=0;
 									break;
 							}
 							
-							
-						
 				$li.append($span1);
 				}
 				
 				
 			});
-			
-			$(".lazy li").on("click",function(){
-				var detailFruitId = setCookie("detailFruitId",$(this).attr("xfruitId"),-1,"/");
-				var recentBrowserList = getCookie("recentBrowserList");
-				recentBrowserList += ","+$(this).attr("xfruitId");
-				setCookie("recentBrowserList",recentBrowserList,-1,"/");
+			$.each($(".lazy li"),function(){
+				$(this).on("click",function(){
+					var detailFruitId = setCookie("detailFruitId",$(this).attr("xfruitId"),-1,"/");
+					var recentBrowserList = getCookie("recentBrowserList");
+					recentBrowserList += ","+$(this).attr("xfruitId");
+					setCookie("recentBrowserList",recentBrowserList,-1,"/");
+				});
+				
 			});
 			typeClick();
 			smallCarLogoClick();
@@ -149,16 +155,16 @@ var i=0;
 	function typeClick(){
 	
 	$(".big").on("click",function(){
-		$(this).closest("li").find(".up label").html($(this).attr("bigPrice"));
+		$(this).closest("li").find(".up label").html($(this).attr("bigPriceAll"));
 		$(this).addClass("cur").siblings("label").removeClass("cur");
 	});
 	$(".small").on("click",function(){
-			$(this).closest("li").find(".up label").html($(this).attr("smallPrice"));
+			$(this).closest("li").find(".up label").html($(this).attr("smallPriceAll"));
 			$(this).addClass("cur").siblings("label").removeClass("cur");
 		});
 	}
 	
-//点击小购物车图标，触发背景图运动切换，并让total+1；sum+bigPrice；detailFruitId=此li的xfruitId；buyList+“xfruit，bigPrice，1”；
+//点击小购物车图标，触发背景图运动切换，并让total+1；sum+bigPriceAll；detailFruitId=此li的xfruitId；buyList+“xfruit，bigPriceAll，1”；
 	function smallCarLogoClick(){
 		
 		var $p = $(".lazy").find(".down p");
