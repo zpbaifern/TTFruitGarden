@@ -1,6 +1,6 @@
 jQuery(function($) {
 
-	//首页导航样式初始化
+	//“首页”导航样式初始化
 	var $navMiddle = $(".navMiddle");
 	$navMiddle.find("li").eq(0).css({
 		"border-bottom": "2px solid #64A131"
@@ -49,13 +49,13 @@ jQuery(function($) {
 		show();
 		timer = setInterval(move, 2000);
 	});
-
+	//轮播到下一张
 	function move() {
 		i++;
 		nextCheck();
 		show();
 	}
-
+	//检查是否最后一张
 	function nextCheck() {
 		if(i >= len) {
 			i = 0
@@ -64,7 +64,7 @@ jQuery(function($) {
 			i = len
 		}
 	}
-
+	//ul改变定位位置，实现轮播效果
 	function show() {
 		$carouselUl1.animate({
 			left: -i * $(window).width()
@@ -81,7 +81,7 @@ jQuery(function($) {
 	//列表1 
 
 	$.ajax({
-		url: "../../../data/Goods.json",
+		url: "../../data/Goods.json",
 		dataType: "json",
 		success: function(res) {
 			var $targetUl1 = $("#contentList1");
@@ -140,7 +140,7 @@ jQuery(function($) {
 	});
 	//列表2
 	$.ajax({
-		url: "../../../data/Goods.json",
+		url: "../../data/Goods.json",
 		dataType: "json",
 		success: function(res) {
 			var $targetUl2 = $("#contentList2");
@@ -200,7 +200,7 @@ jQuery(function($) {
 	});
 	//列表3
 	$.ajax({
-		url: "../../../data/Goods.json",
+		url: "../../data/Goods.json",
 		dataType: "json",
 		success: function(res) {
 			var $targetUl3 = $("#contentList3");
@@ -258,7 +258,7 @@ jQuery(function($) {
 	});
 	//列表4 
 	$.ajax({
-		url: "../../../data/Goods.json",
+		url: "../../data/Goods.json",
 		dataType: "json",
 		success: function(res) {
 			var $targetUl4 = $("#contentList4");
@@ -325,6 +325,7 @@ jQuery(function($) {
 	//点击购物车弹窗的叉号或继续购物或键盘Enter键，就让弹窗隐藏
 	var $spanClose = $(".carAlert span");
 	var $aContinue = $(".a1");
+	//（1）x号点击
 	$spanClose.on("click", function() {
 		$carAlert.fadeOut();
 		var $littleCarLogo = $(".littleCarLogo");
@@ -332,6 +333,7 @@ jQuery(function($) {
 			backgroundPosition: "-516px -242px"
 		});
 	});
+	//（2）继续购物点击
 	$aContinue.on("click", function() {
 		$carAlert.fadeOut();
 		var $littleCarLogo = $(".littleCarLogo");
@@ -339,6 +341,7 @@ jQuery(function($) {
 			backgroundPosition: "-516px -242px"
 		});
 	});
+	//（3）回车键按下
 	$(window).on("keydown", function(e) {
 		if(e.keyCode == 13) {
 			$carAlert.fadeOut();
@@ -431,4 +434,3 @@ function smallCarLogoClick($span) {
 		});
 	});
 }
-

@@ -6,19 +6,18 @@
 		<title></title>
 		<link rel="stylesheet" type="text/css" href="../css/common.css" />
 		<link rel="stylesheet" type="text/css" href="../css/detail.css" />
-		<link rel="stylesheet" type="text/css" href="../css/jquery.xfruit.css"/>
+		<link rel="stylesheet" type="text/css" href="../assets/jquery.xfruit.css" />
 
 		<script type="text/javascript" src="../js/jquery-1.12.0.js"></script>
 		<script type="text/javascript" src="../js/common.js"></script>
-		<script type="text/javascript" src="../js/jquery.xfruit.js"></script>
+		<script type="text/javascript" src="../assets/jquery.xfruit.js"></script>
 		<script type="text/javascript" src="../js/details.js"></script>
-		
-		
+
 	</head>
 
 	<body>
+		<!--顶端------------------------------------------------------------------------------>
 		<div class="topAll">
-
 			<div class="top">
 				<div class="topDiv1">
 					<img src="../css/img/truck.jpg" /><i></i>
@@ -31,7 +30,8 @@
 							<a href="#">北京</a>&nbsp;
 							<a href="#">苏州</a>&nbsp;
 							<a href="#">南京</a>&nbsp;
-							<a href="#">深圳</a></p>
+							<a href="#">深圳</a>
+						</p>
 						<h3>选择城市：</h3>
 						<ul>
 							<li class="liOut">
@@ -42,7 +42,7 @@
 							</li>
 							<li class="liOut">
 								<p>
-									<a href="#">江苏</a><span>></span></p>	
+									<a href="#">江苏</a><span>></span></p>
 								<ul>
 									<li>常州</li>
 									<li>淮安</li>
@@ -61,7 +61,8 @@
 							</li>
 							<li class="liOut">
 								<p>
-									<a href="#">浙江</a><span>></span></p> <ul>
+									<a href="#">浙江</a><span>></span></p>
+								<ul>
 									<li>杭州</li>
 									<li>湖州</li>
 									<li>嘉兴</li>
@@ -77,7 +78,8 @@
 							</li>
 							<li class="liOut">
 								<p>
-									<a href="#">安徽</a><span>></span></p>	<ul>
+									<a href="#">安徽</a><span>></span></p>
+								<ul>
 									<li>安庆</li>
 									<li>蚌埠</li>
 									<li>亳州</li>
@@ -104,7 +106,8 @@
 							</li>
 							<li class="liOut">
 								<p>
-									<a href="#">河北</a><span>></span></p>	<ul>
+									<a href="#">河北</a><span>></span></p>
+								<ul>
 									<li>石家庄</li>
 									<li>廊坊</li>
 									<li>承德</li>
@@ -120,8 +123,8 @@
 							</li>
 							<li class="liOut">
 								<p>
-									<a href="#">广东</a><span>></span></p>	
-									<ul>
+									<a href="#">广东</a><span>></span></p>
+								<ul>
 									<li>深圳</li>
 									<li>广州</li>
 									<li>珠海</li>
@@ -154,7 +157,7 @@
 				<ul class="topUl3">
 					<li class="lifirst">
 						<a href="login.html">[ 登录 ]</a>
-						
+
 						<a href="register.html">[ 注册有惊喜 ]</a>
 					</li>
 					<li class="nocursor">|</li>
@@ -221,6 +224,9 @@
 				</ul>
 			</div>
 		</div>
+		
+			
+		<!--导航栏------------------------------------------------------------------------------>
 		<div class="navAll">
 
 			<div class="nav">
@@ -243,10 +249,10 @@
 					</li>
 				</ul>
 				<div class="navRight">
-					<div class="div1">
+					<a href="clearing.html" class="div1">
 						<span>0</span>
 						<img src="../css/img/car.png" />
-					</div>
+					</a>
 					<div class="div2">
 						<input type="text" name="" id="" value="金奇异果" />
 						<img src="../css/img/search.png" />
@@ -261,31 +267,33 @@
 				</div>
 			</div>
 		</div>
+		
+			
+		<!--商品详情部分------------------------------------------------------------------------------>
 		<div class="details">
 			<div class="bread">
 				<a href="../index.html"><strong>首页</strong></a>
 				<span>><a href="list.html">新鲜水果></a></span>
 				<span></span>
 			</div>
+			<!--商品详情左侧的点看台------------------------------------------------------------------------------>
 			<div class="myFocus">
-				<ul class="dianul">
-					
-				</ul>
+				<!--商品点看台左侧的点选台------------------------------------------------------------------------------>
+				<ul class="dianul"></ul>
+				<!--商品点看台右侧的显示台------------------------------------------------------------------------------>
 				<div class="tuul">
-					
 					<div class="pro_list_pos">
 						<span class="pro_list_span" style="background: #65A032">新品</span>
 					</div>
-					
 				</div>
-				
 			</div>
+			<!--商品详情右侧的商品信息------------------------------------------------------------------------------>			
 			<div class="product-info">
 				<h3 class="title"></h3>
 				<p class="title_describeapp">
-					
 				</p>
 				<div class="price-info">
+					<!--价格显示模块------------------------------------------------------------------------------>
 					<div class="price01">
 						<div class="box pull-left">
 							<h5 class="pull-left">果园价</h5>
@@ -296,14 +304,15 @@
 								<img src="http://qr.liantu.com/api.php?el=l&amp;w=280&amp;m=5&amp;text=http://m.fruitday.com/detail/index/13544">
 							</div>
 						</div>
-
 					</div>
+					<!--商品规格选择模块------------------------------------------------------------------------------>
 					<div class="guige">
 						<h5 class="pull-left">规格</h5>
 						<div class="zhuang pull-left style">
-						
+
 						</div>
 					</div>
+					<!--配送模块------------------------------------------------------------------------------>
 					<div class="send">
 						<h5 class="sendTo pull-left">配送至</h5>
 						<select class="targetField">
@@ -314,26 +323,31 @@
 						</select>
 						<span class="have">有货</span>
 					</div>
+					<!--数量模块------------------------------------------------------------------------------>
 					<div class="amount">
 						<h5 class="pull-left">数量</h5>
 						<span id="redu1" class="num pull-left">-</span>
 						<input class="pull-left" id="add" type="text" value="1" style="outline: none;">
 						<span id="add1" class="num pull-left">+</span>
 					</div>
+					<!--点击购买模块------------------------------------------------------------------------------>
 					<div class="buy">
 						<h5 class="pull-left"> </h5>
 						<a href="clearing.html" title="点击此按钮，到下一步确认购买信息" class="fr-buy pull-left">立即购买</a>
-						<a href="###" title="加入购物车" class="fr-add pull-left">加入购物车</a>
+						<p title="加入购物车" class="fr-add pull-left">加入购物车</p>
 					</div>
 				</div>
 				<img src="../css/img/info.jpg" />
 			</div>
+			<!--商品简介内容------------------------------------------------------------------------------>
 			<div class="introduction">
+				<!--商品简介内容中的吸顶条------------------------------------------------------------------------------>
 				<div class="fixed">
-					<span class="spanActive">商品简介</span><span>顾客评论</span>
+					<span class="spanActive">商品简介</span><span>顾客评论<label class="commentTotal"></label></span>
 					<a href="###" title="加入购物车" class="fr-add2">加入购物车</a>
 				</div>
-				<div id="showImg">
+				<!--商品简介的商品图片------------------------------------------------------------------------------>
+				<div id="showImg" class="showImg">
 					<img src="../css/img/introduction1.jpg" />
 					<img src="../css/img/introduction2.jpg" />
 					<img src="../css/img/introduction3.jpg" />
@@ -351,90 +365,162 @@
 					<img src="../css/img/introduction15.gif" />
 					<img src="../css/img/introduction16.gif" />
 				</div>
-				<ul id="showComment">
-					
-				</ul>
+				<!--商品简介的总体评价情况------------------------------------------------------------------------------>
+				<div class="detailTitle"></div>
+				<!--商品简介的消费者反馈------------------------------------------------------------------------------>
+				<div class="customer">
+					<ul id="showComment" class="showComment">
+						<li>
+							<div class="userInfo">
+								<img src="../css/img/person1.jpg" />
+								<i>1345****872</i>
+							</div>
+							<div class="criticismInfo">
+								<p class="star"><label>评分</label><span class="starStar"></span><span class="starStar"></span><span class="starStar"></span><span class="starStar"></span><span class="starStar"></span></p>
+								<p class="comment"><label>内容</label><span>评分内容甜度不错，不过皮很厚！里面的筋也很多！性价比一般</span></p>
+								<p class="time"><label>&nbsp;</label><span>2016-10-09 13:23:14</span></p>
+							</div>
+						</li>
+						<li>
+							<div class="userInfo">
+								<img src="../css/img/person2.jpg" />
+								<i>1345****872</i>
+							</div>
+							<div class="criticismInfo">
+								<p class="star"><label>评分</label><span class="starStar"></span><span class="starStar"></span><span class="starStar"></span><span class="starStar"></span></p>
+								<p class="comment"><label>内容</label><span>第二次买了，真心不错</span></p>
+								<p class="time"><label>&nbsp;</label><span>2016-10-08 12:23:22</span></p>
+							</div>
+						</li>
+						<li>
+							<div class="userInfo">
+								<img src="../css/img/person3.jpg" />
+								<i>1345****872</i>
+							</div>
+							<div class="criticismInfo">
+								<p class="star"><label>评分</label><span class="starStar"></span><span class="starStar"></span><span class="starStar"></span><span class="starStar"></span><span class="starStar"></span></p>
+								<p class="comment"><label>内容</label><span>果果不错，第一次吃很满意</span></p>
+								<p class="time"><label>&nbsp;</label><span>2016-10-04 13:32:16</span></p>
+							</div>
+						</li>
+						<li>
+							<div class="userInfo">
+								<img src="../css/img/person4.jpg" />
+								<i>1345****872</i>
+							</div>
+							<div class="criticismInfo">
+								<p class="star"><label>评分</label><span class="starStar"></span><span class="starStar"></span><span class="starStar"></span><span class="starStar"></span><span class="starStar"></span></p>
+								<p class="comment"><label>内容</label><span>看起来棒棒哒</span></p>
+								<p class="time"><label>&nbsp;</label><span>2016-09-20 08:23:55</span></p>
+							</div>
+						</li>
+						<li>
+							<div class="userInfo">
+								<img src="../css/img/person5.jpg" />
+								<i>1345****872</i>
+							</div>
+							<div class="criticismInfo">
+								<p class="star"><label>评分</label><span class="starStar"></span><span class="starStar"></span><span class="starStar"></span><span class="starStar"></span></p>
+								<p class="comment"><label>内容</label><span>个头不大，皮超级厚，有点酸，真心不咋地还贵</span></p>
+								<p class="time"><label>&nbsp;</label><span>2016-08-13 12:23:15</span></p>
+							</div>
+						</li>
+						<li>
+							<div class="userInfo">
+								<img src="../css/img/person6.jpg" />
+								<i>1345****872</i>
+							</div>
+							<div class="criticismInfo">
+								<p class="star"><label>评分</label><span class="starStar"></span><span class="starStar"></span><span class="starStar"></span></p>
+								<p class="comment"><label>内容</label><span>不知道这个为什么那么贵，实际就是这样的，皮那么厚，肉也没有那么多汁肥嫩。下次不会买了</span></p>
+								<p class="time"><label>&nbsp;</label><span>2016-03-02 02:23:35</span></p>
+							</div>
+						</li>
+						<li>
+							<div class="userInfo">
+								<img src="../css/img/person7.jpg" />
+								<i>1345****872</i>
+							</div>
+							<div class="criticismInfo">
+								<p class="star"><label>评分</label><span class="starStar"></span><span class="starStar"></span><span class="starStar"></span><span class="starStar"></span><span class="starStar"></span></p>
+								<p class="comment"><label>内容</label><span>起码样子长得挺好看的</span></p>
+								<p class="time"><label>&nbsp;</label><span>2016-01-12 15:32:45</span></p>
+							</div>
+						</li>
+						<li>
+							<div class="userInfo">
+								<img src="../css/img/person8.jpg" />
+								<i>1345****872</i>
+							</div>
+							<div class="criticismInfo">
+								<p class="star"><label>评分</label><span class="starStar"></span><span class="starStar"></span><span class="starStar"></span><span class="starStar"></span></p>
+								<p class="comment"><label>内容</label><span>我这次买了4个不怎么样</span></p>
+								<p class="time"><label>&nbsp;</label><span>2016-01-05 15:23:13</span></p>
+							</div>
+						</li>
+						<li>
+							<div class="userInfo">
+								<img src="../css/img/person9.jpg" />
+								<i>1345****872</i>
+							</div>
+							<div class="criticismInfo">
+								<p class="star"><label>评分</label><span class="starStar"></span><span class="starStar"></span><span class="starStar"></span><span class="starStar"></span></p>
+								<p class="comment"><label>内容</label><span>味道还可以，稍微有些干</span></p>
+								<p class="time"><label>&nbsp;</label><span>2015-12-18 08:23:21</span></p>
+							</div>
+						</li>
+						<li>
+							<div class="userInfo">
+								<img src="../css/img/person2.jpg" />
+								<i>1345****872</i>
+							</div>
+							<div class="criticismInfo">
+								<p class="star"><label>评分</label><span class="starStar"></span><span class="starStar"></span><span class="starStar"></span><span class="starStar"></span><span class="starStar"></span></p>
+								<p class="comment"><label>内容</label><span>果皮厚度正常水平，果肉红润，未见\"三红\"，口味上略呈酸味，甜度不高，含水量一般，综上，小贵。</span></p>
+								<p class="time"><label>&nbsp;</label><span>2015-10-22 12:32:12</span></p>
+							</div>
+						</li>
+						<li>
+							<div class="userInfo">
+								<img src="../css/img/person10.jpg" />
+								<i>1345****872</i>
+							</div>
+							<div class="criticismInfo">
+								<p class="star"><label>评分</label><span class="starStar"></span><span class="starStar"></span><span class="starStar"></span><span class="starStar"></span></p>
+								<p class="comment"><label>内容</label><span>好吃，唯一缺点就是皮太厚咯</span></p>
+								<p class="time"><label>&nbsp;</label><span>2015-07-05 03:12:12</span></p>
+							</div>
+						</li>
+					</ul>
+					<div class="ulBtn">
+
+					</div>
+				</div>
+
 			</div>
+			<!--商品简介右侧的最近浏览------------------------------------------------------------------------------>
 			<div class="recentBrowse">
 				<h3>最近浏览</h3>
 				<ul class="recentBrowseUl">
 				</ul>
 			</div>
-
 		</div>
-
-		<div class="icon">
-			<ul class="promise">
-				<li style="background: url(../css/img/icon.png) no-repeat 43px top;"></li>
-				<li style="background: url(../css/img/icon.png) no-repeat 43px -60px;"></li>
-				<li style="background: url(../css/img/icon.png) no-repeat 43px -120px;"></li>
-				<li style="background: url(../css/img/icon.png) no-repeat 43px bottom;" class="promiseliLast"></li>
-			</ul>
-		</div>
-		<div class="foot">
-			<div class="footLeft">
-				<img class="img1" src="../css/img/footLeft1.png" />
-				<img class="img2" src="../css/img/footLeft2.png" />
-				<span><label>服务时间</label>  08:00 - 22:00</span>
-			</div>
-			<div class="footMiddle">
-				<ul class="footMiddleList">
-					<li><img src="../css/img/a.jpg" />天天果园官方微信</li>
-					<li><img src="../css/img/b.jpg" />天天果园APP</li>
-				</ul>
-			</div>
-			<div class="footRight">
-				<ul class="footRightList">
-					<li>
-						<h4>购物指南</h4>
-						<a href="#">新用户注册</a>
-						<a href="#">在线下单</a>
-						<a href="#">支付方式</a>
-					</li>
-					<li>
-						<h4>运费说明</h4>
-						<a href="#">运费方式</a>
-						<a href="#">发票说明</a>
-						<a href="#">售后服务</a>
-					</li>
-					<li>
-						<h4>退换货规则</h4>
-						<a href="#">服务保障承诺</a>
-						<a href="#">验货与签收</a>
-						<a href="#">企业服务</a>
-					</li>
-					<li>
-						<h4>企业服务</h4>
-						<a href="#">企业订购</a>
-						<a href="#">公司简介</a>
-						<a href="#">定制专区</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-		<div class="footer">
-			<h4>版权所有 © 2015天天果园  保留所有权利 | 沪ICP备12042163</h4>
-			<p>天天果园&nbsp;&nbsp;鲜果网购</p>
-			<div>
-				<a href="#"><img src="../css/img/a.gif" /></a>
-				<a href="#"><img src="../css/img/b.png" /></a>
-			</div>
-		</div>
-		<a href="###"><img class="duiHuan" src="../css/img/duihuan.png" /></a>
-		<a href="###"><img class="weiXin" src="../css/img/weixin.png" /></a>
-		<img class="backTop" src="../css/img/top.png" />
-		<div class="carAlert">
-			<span>&times;</span>
-			<span class="continueShopping">继续购物</span>
-			<a href="###">去结算</a>
-		</div>
+		
+			
+		<!--加载common.html（公共内容的网页）------------------------------------------------------------------------------>
+		<div class="commentPart"></div>	
+		
+			
+		<!--购物车弹窗------------------------------------------------------------------------------>
 		<div class="carAlert">
 			<span></span>
 			<div class="carInfo">
 				购物车中共 <label></label> 件商品 | 商品小计<label>￥</label><label></label>
 			</div>
-			<p><a class="a1">继续购物</a>
-			<a href="clearing.html" class="a2">去结算</a></p>
+			<p>
+				<a class="a1">继续购物</a>
+				<a href="clearing.html" class="a2">去结算</a>
+			</p>
 		</div>
 	</body>
 

@@ -1,6 +1,6 @@
 jQuery(function($){
-	
-	var buyList = decodeURI(getCookie("buyList"));//加载页面时，读取buyList的cookie值，保存到名为buyList的变量中
+	//加载页面时，读取buyList的cookie值，保存到名为buyList的变量中
+	var buyList = decodeURI(getCookie("buyList"));
 	
 	//对变量buyList的值（字符串），进行修整
 	if(buyList.indexOf(0) == ","){
@@ -24,7 +24,7 @@ jQuery(function($){
 		}
 		$.ajax({
 			async:"false",
-			url:"../../../data/Goods.json",
+			url:"../../data/Goods.json",
 			dataType: "json",
 			success: function(res) {
 				
@@ -33,12 +33,16 @@ jQuery(function($){
 					if(item.xfruitId == a[currentIndex])
 					{
 						var $img = $("<img/>").attr({"src":item.imgurlCollection[0],"xFruid":a[currentIndex]});
+						var $a1 = $("<a/>").attr({"xFruid":a[currentIndex],href:"details.html"});
 						var $li1 = $("<li/>").addClass("li1 paddingTop10").attr("xFruid",a[currentIndex]);
-						$li1.html($img);
+						$a1.append($img);
+						$li1.html($a1);
 						
 						var $span = $("<span/>").html(item.title).attr("xFruid",a[currentIndex]);
+						var $a2 = $("<a/>").attr({"xFruid":a[currentIndex],href:"details.html"});
+						$a2.append($span);
 						var $li2 = $("<li/>").addClass("li2 paddingTop15");
-						$li2.append($span);
+						$li2.append($a2);
 						
 						if(item.bigPrice == a[currentIndex+1]){
 							var $li3 = $("<li/>").html(item.big).addClass("li3 paddingTop15");
@@ -67,6 +71,8 @@ jQuery(function($){
 		});
 		
 	}
+	//点击结算列表中的li1图像或li2名字，可以转到对应的详情页
+	turnToDetails();
 	
 	//调用加、减、删除按钮被委托点击事件的函数
 	addClick();
@@ -129,6 +135,14 @@ function checkNoBuy(){
 		$particularsSon.find("h3").show();
 	}
 }
+//点击li1的图像或li2的名字，转到对应详情页
+function turnToDetails(){
+	$(".particularsSon").on("click","a",function(){
+		var detailFruitId = $(this).attr("xFruid");
+		setCookie("detailFruitId",detailFruitId,-1,"/");
+	});
+}
+
 //委托减按钮点击后，total的cookie值-1、sum的cookie值-此商品的单价、buyList的cookie值对应水果id的货物件数-1统计栏重新获取total、sum的cookie值
 function reduClick(){
 		$(".particularsSon").on("click",".labelLeft",function(){

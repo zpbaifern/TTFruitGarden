@@ -1,385 +1,474 @@
 @charset "utf-8";
-			.details {
-				width: 1280px;
-				padding-top: 50px;
-				margin: 0 auto 40px;
-				overflow: hidden;
-			}
-			
-			.details .bread {
-				height: 15px;
-				line-height: 15px;
-				margin-bottom: 20px;
-			}
-			
-			.bread a {
-				color: #64A131;
-				font-size: 14px;
-			}
-			
-			.bread span {
-				color: #999;
-				font-size: 14px;
-			}
-			
-			.myFocus {
-				width: 700px;
-				height: 560px;
-				position: relative;
-				float: left;
-			}
-			
-			.myFocus .dianul {
-				list-style: none;
-				float: left;
-				width: 140px;
-				height: 560px;
-				padding: 0px;
-				margin-bottom: 0px;
-				margin: 0px;
-			}
-			
-			.myFocus .dianul li {
-				cursor: pointer;
-				width: 138px;
-				height: 138px;
-				margin-bottom: 2px;
-				position: relative;
-			}
-			
-			.myFocus .dianul li img {
-				width: 100%;
-				height: 100%;
-				vertical-align: middle;
-			}
-			
-			.myFocus .dianul li span {
-				position: absolute;
-				top: 0;
-				left: 0;
-				z-index: 2;
-				width: 100%;
-				height: 100%;
-				border: 1px solid yellow;
-				display: none;
-			}
-			.myFocus .dianul li .active {
-				display: block;
-			}
-			.myFocus .tuul {
-				
-				float: left;
-				width: 560px;
-				height: 560px;
-				padding: 0px;
-				margin: 0px;
-				position: relative;
-			}
-			
-			.myFocus .tuul  img {
-				width: 560px;
-				height: 560px;
-			}
-			
-			
-			.pro_list_pos {
-				position: absolute;
-				left: 0;
-				top: 0;
-			}
-			
-			.pro_list_pos span {
-				font-size: 14px;
-				line-height: 1;
-				padding: 6px 5px;
-				color: #fff;
-				margin-right: 1px;
-				float: left;
-				display: inline-block;
-				background: #65A032;
-			}
-			
-			.product-info {
-				padding-left: 28px;
-				width: 580px;
-				padding-top: 20px;
-				float: left;
-				box-sizing: border-box;
-			}
-			
-			.product-info .title {
-				margin: 0px;
-				font-family: 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
-				color: #555555;
-				line-height: 40px;
-				overflow: hidden;
-				text-overflow: ellipsis;
-				font-size: 24px;
-			}
-			
-			.product-info .title_describeapp {
-				height: 48px;
-				text-overflow: ellipsis;
-				overflow: hidden;
-				font-size: 16px;
-				line-height: 48px;
-				color: #999;
-			}
-			
-			.product-info .price-info {
-				position: relative;
-				border-bottom: 1px solid #dddddd;
-				box-sizing: border-box;
-				overflow: hidden;
-			}
-			
-			.price-info .price01 {
-				position: relative;
-				width: 552px;
-				height: 75px;
-				padding-left: 10px;
-				background: url(../css/img/collection.png) no-repeat 0 -48px;
-				margin-bottom: 20px;
-				margin-right: 20px;
-				box-sizing: border-box;
-			}
-			
-			.price01 .box {
-				position: absolute;
-				top: 25px;
-			}
-			
-			.pull-left {
-				float: left !important;
-			}
-			
-			.price-info h5 {
-				font: 14px/200% 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
-				color: #999999;
-				width: 60px;
-				margin: 0px;
-			}
-			.price-info .price01 span.price-logo {
-				font: 24px/100% "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-				color: #64a131;
-				font-weight: bold;
-			}
-			.price-info .price01 span.price-sp {
-				width: 124px;
-				font: 24px/100% "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-				color: #64a131;
-				font-weight: bold;
-			}
-			
-			.price01 .box2 {
-				position: relative;
-				width: 56px;
-				height: 26px;
-				margin-top: 25px;
-				background: url(../css/img/collection.png) no-repeat -64px -8px;
-				box-sizing: border-box;
-			}
-			
-			.pull-right {
-				float: right !important;
-			}
-			
-			.price01 .box2 .weixin {
-				display: none;
-				position: absolute;
-				top: -150px;
-				right: 25px;
-				z-index: 9999;
-			}
-			
-			.weixin img {
-				vertical-align: middle;
-			}
-			
-			.product-info .price-info .guige {
-				overflow: hidden;
-				margin-bottom: 22px;
-				padding-left: 10px;
-			}
-			
-			.product-info .price-info h5 {
-				font: 14px/200% 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
-				color: #999999;
-				width: 60px;
-				margin: 0px;
-			}
-			
-			.product-info .price-info .guige .zhuang span.current {
-				
-				background-color: #64a131;
-				color: #ffffff;
-			}
-			
-			.product-info .price-info .guige .zhuang span {
-				display: block;
-				padding-left: 20px;
-				padding-right: 20px;
-				height: 26px;
-				margin-right: 10px;
-				text-align: center;
-				font-family: "Hiragino Sans GB", "Microsoft YaHei";
-				font-size: 12px;
-				line-height: 26px;
-				border: 1px solid #ddd;
-				cursor: pointer;
-				border-radius:8px;
-			}
-			
-			.price-info .send {
-				width: 540px;
-				line-height: 33px;
-				position: relative;
-				z-index: 10;
-				margin-bottom: 21px;
-				padding-left: 10px;
-				box-sizing: border-box;
-				overflow: hidden;
-				display: block;
-			}
-			
-			.targetField {
-				width: 72px;
-				height: 33px;
-				color: #333;
-				font-size: 14px;
-			}
-			
-			.send .have {
-				color: #64A131;
-				padding-left: 2px;
-			}
-			
-			.price-info .amount {
-				width: 540px;
-				line-height: 33px;
-				position: relative;
-				z-index: 10;
-				margin-bottom: 30px;
-				padding-left: 10px;
-				box-sizing: border-box;
-				overflow: hidden;
-				display: block;
-			}
-			
-			.amount input {
-				font-family: "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-				font-size: 14px;
-				width: 35px;
-				height: 25px;
-				border: 0px;
-				text-align: center;
-				line-height: 24px;
-				padding: 0px;
-				float: left;
-			}
-			
-			.amount span {
-				font-family: "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-				font-size: 14px;
-				width: 33px;
-				height: 25px;
-				border: 0px;
-				text-align: center;
-				line-height: 24px;
-				padding: 0px;
-				float: left;
-				background: #eee;
-				cursor: pointer;
-			}
-			
-			.price-info .buy {
-				width: 540px;
-				line-height: 33px;
-				position: relative;
-				z-index: 10;
-				margin-bottom: 30px;
-				padding-left: 10px;
-				box-sizing: border-box;
-				overflow: hidden;
-				display: block;
-			}
-			
-			.price-info .buy a {
-				line-height: 33px;
-				color: #7daf57;
-				background: #f5ffed;
-				border: 1px solid #64a131;
-				display: block;
-				width: 160px;
-				height: 36px;
-				font-family: "Hiragino Sans GB", "microsoft yahei", sans-serif;
-				font-size: 16px;
-				text-align: center;
-				line-height: 36px;
-				border-radius: 4px;
-				margin-right: 15px;
-			}
-			
-			.price-info .buy .fr-add {
-				color: white;
-				background: #64A131;
-			}
-			
-			.introduction {
-				width: 1000px;
-				min-height: 38px;
-				border: 1px solid #ccc;
-				float: left;
-				margin-top: 68px;
-				position: relative;
-			}
-			
-			.introduction img {
-				width: 1000px;
-				display: block;
-			}
-			
-			
-			
-			
-			.fixed {
-				width: 100%;
-				font-size: 16px;
-				position: absolute;
-				border: 0;
-				top: 0;
-				background: #f1f1f1;
-				overflow: hidden;
-			}
-			
-			.fixed span {
-				float: left;
-				height: 38px;
-				padding: 0 36px;
-				border-right: 1px solid #ccc;
-				text-align: center;
-				font: 16px 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
-				line-height: 38px;
-				color: #555555;
-				cursor: pointer;
-			}
-			
-			.fixed .spanActive {
-				height: 35px;
-				border-top: 3px solid #64a131;
-				padding: 0 36px;
-				background-color: #ffffff;
-				line-height: 35px;
-			}
-			
-			.fixed a {
-				float: right;
-				height: 34px;
-				padding: 2px 22px;
-				background: #64A131;
-				text-align: center;
-				font: 16px 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
-				line-height: 34px;
-				color: #FFFFFF;
-			}
-			
+/*<!--商品详情部分------------------------------------------------------------------------------>*/
+.details {
+	width: 1280px;
+	padding-top: 50px;
+	margin: 0 auto 40px;
+	overflow: hidden;
+}
+
+.details .bread {
+	height: 15px;
+	line-height: 15px;
+	margin-bottom: 20px;
+}
+
+.bread a {
+	color: #64A131;
+	font-size: 14px;
+}
+
+.bread span {
+	color: #999;
+	font-size: 14px;
+}
+/*<!--商品详情左侧的点看台------------------------------------------------------------------------------>*/
+.myFocus {
+	width: 700px;
+	height: 560px;
+	position: relative;
+	float: left;
+}
+/*<!--商品点看台左侧的点选台------------------------------------------------------------------------------>*/
+.myFocus .dianul {
+	list-style: none;
+	float: left;
+	width: 140px;
+	height: 560px;
+	padding: 0px;
+	margin-bottom: 0px;
+	margin: 0px;
+}
+
+.myFocus .dianul li {
+	cursor: pointer;
+	width: 138px;
+	height: 138px;
+	margin-bottom: 2px;
+	position: relative;
+}
+
+.myFocus .dianul li img {
+	width: 100%;
+	height: 100%;
+	vertical-align: middle;
+}
+
+.myFocus .dianul li span {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	width: 100%;
+	height: 100%;
+	border: 1px solid yellow;
+	display: none;
+}
+
+.myFocus .dianul li .active {
+	display: block;
+}
+/*<!--商品点看台右侧的显示台------------------------------------------------------------------------------>*/
+.myFocus .tuul {
+	float: left;
+	width: 560px;
+	height: 560px;
+	padding: 0px;
+	margin: 0px;
+	position: relative;
+}
+
+.myFocus .tuul img {
+	width: 560px;
+	height: 560px;
+}
+
+.pro_list_pos {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.pro_list_pos span {
+	font-size: 14px;
+	line-height: 1;
+	padding: 6px 5px;
+	color: #fff;
+	margin-right: 1px;
+	float: left;
+	display: inline-block;
+	background: #65A032;
+}
+/*<!--商品详情右侧的商品信息------------------------------------------------------------------------------>*/	
+.product-info {
+	padding-left: 28px;
+	width: 580px;
+	padding-top: 20px;
+	float: left;
+	box-sizing: border-box;
+}
+
+.product-info .title {
+	margin: 0px;
+	font-family: 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+	color: #555555;
+	line-height: 40px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-size: 24px;
+}
+
+.product-info .title_describeapp {
+	height: 48px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	font-size: 16px;
+	line-height: 48px;
+	color: #999;
+}
+
+.product-info .price-info {
+	position: relative;
+	border-bottom: 1px solid #dddddd;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+/*<!--价格显示模块------------------------------------------------------------------------------>*/
+.price-info .price01 {
+	position: relative;
+	width: 552px;
+	height: 75px;
+	padding-left: 10px;
+	background: url(../css/img/collection.png) no-repeat 0 -48px;
+	margin-bottom: 20px;
+	margin-right: 20px;
+	box-sizing: border-box;
+}
+
+.price01 .box {
+	position: absolute;
+	top: 25px;
+}
+
+.pull-left {
+	float: left !important;
+}
+
+.price-info h5 {
+	font: 14px/200% 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+	color: #999999;
+	width: 60px;
+	margin: 0px;
+}
+
+.price-info .price01 span.price-logo {
+	font: 24px/100% "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+	color: #64a131;
+	font-weight: bold;
+}
+
+.price-info .price01 span.price-sp {
+	width: 124px;
+	font: 24px/100% "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+	color: #64a131;
+	font-weight: bold;
+}
+
+.price01 .box2 {
+	position: relative;
+	width: 56px;
+	height: 26px;
+	margin-top: 25px;
+	background: url(../css/img/collection.png) no-repeat -64px -8px;
+	box-sizing: border-box;
+}
+
+.pull-right {
+	float: right !important;
+}
+
+.price01 .box2 .weixin {
+	display: none;
+	position: absolute;
+	top: -150px;
+	right: 25px;
+	z-index: 9999;
+}
+
+.weixin img {
+	vertical-align: middle;
+}
+/*<!--商品规格选择模块------------------------------------------------------------------------------>*/
+.product-info .price-info .guige {
+	overflow: hidden;
+	margin-bottom: 22px;
+	padding-left: 10px;
+}
+
+.product-info .price-info h5 {
+	font: 14px/200% 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+	color: #999999;
+	width: 60px;
+	margin: 0px;
+}
+
+.product-info .price-info .guige .zhuang span.current {
+	background-color: #64a131;
+	color: #ffffff;
+}
+
+.product-info .price-info .guige .zhuang span {
+	display: block;
+	padding-left: 20px;
+	padding-right: 20px;
+	height: 26px;
+	margin-right: 10px;
+	text-align: center;
+	font-family: "Hiragino Sans GB", "Microsoft YaHei";
+	font-size: 12px;
+	line-height: 26px;
+	border: 1px solid #ddd;
+	cursor: pointer;
+	border-radius: 8px;
+}
+/*<!--配送模块------------------------------------------------------------------------------>*/
+.price-info .send {
+	width: 540px;
+	line-height: 33px;
+	position: relative;
+	z-index: 10;
+	margin-bottom: 21px;
+	padding-left: 10px;
+	box-sizing: border-box;
+	overflow: hidden;
+	display: block;
+}
+
+.targetField {
+	width: 72px;
+	height: 33px;
+	color: #333;
+	font-size: 14px;
+}
+
+.send .have {
+	color: #64A131;
+	padding-left: 2px;
+}
+/*<!--数量模块------------------------------------------------------------------------------>*/
+.price-info .amount {
+	width: 540px;
+	line-height: 33px;
+	position: relative;
+	z-index: 10;
+	margin-bottom: 30px;
+	padding-left: 10px;
+	box-sizing: border-box;
+	overflow: hidden;
+	display: block;
+}
+
+.amount input {
+	font-family: "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+	font-size: 14px;
+	width: 35px;
+	height: 25px;
+	border: 0px;
+	text-align: center;
+	line-height: 24px;
+	padding: 0px;
+	float: left;
+}
+
+.amount span {
+	font-family: "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+	font-size: 14px;
+	width: 33px;
+	height: 25px;
+	border: 0px;
+	text-align: center;
+	line-height: 24px;
+	padding: 0px;
+	float: left;
+	background: #eee;
+	cursor: pointer;
+}
+/*<!--点击购买模块------------------------------------------------------------------------------>*/
+.price-info .buy {
+	width: 540px;
+	line-height: 33px;
+	position: relative;
+	z-index: 10;
+	margin-bottom: 30px;
+	padding-left: 10px;
+	box-sizing: border-box;
+	overflow: hidden;
+	display: block;
+}
+
+.price-info .buy a,
+.fr-add {
+	line-height: 33px;
+	color: #7daf57;
+	background: #f5ffed;
+	border: 1px solid #64a131;
+	display: block;
+	width: 160px;
+	height: 36px;
+	font-family: "Hiragino Sans GB", "microsoft yahei", sans-serif;
+	font-size: 16px;
+	text-align: center;
+	line-height: 36px;
+	border-radius: 4px;
+	margin-right: 15px;
+}
+
+.price-info .buy .fr-add {
+	color: white;
+	cursor: pointer;
+	background: #64A131;
+}
+/*<!--商品简介内容------------------------------------------------------------------------------>*/
+.introduction {
+	width: 1000px;
+	min-height: 38px;
+	border: 1px solid #ccc;
+	float: left;
+	margin-top: 68px;
+	position: relative;
+}
+
+.introduction img {
+	width: 1000px;
+	display: block;
+}
+/*<!--商品简介内容中的吸顶条------------------------------------------------------------------------------>*/
+.fixed {
+	width: 100%;
+	font-size: 16px;
+	position: absolute;
+	border: 0;
+	top: 0;
+	background: #f1f1f1;
+	overflow: hidden;
+}
+
+.fixed span {
+	float: left;
+	height: 38px;
+	padding: 0 36px;
+	border-right: 1px solid #ccc;
+	text-align: center;
+	font: 16px 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+	line-height: 38px;
+	color: #555555;
+	cursor: pointer;
+}
+
+.fixed .spanActive {
+	height: 35px;
+	border-top: 3px solid #64a131;
+	padding: 0 36px;
+	background-color: #ffffff;
+	line-height: 35px;
+}
+
+.fixed .commentTotal {
+	color: #64A131;
+	font-weight: bold;
+}
+
+.fixed a {
+	float: right;
+	height: 34px;
+	padding: 2px 22px;
+	background: #64A131;
+	text-align: center;
+	font: 16px 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+	line-height: 34px;
+	color: #FFFFFF;
+}
+/*<!--商品简介的总体评价情况------------------------------------------------------------------------------>*/
+.detailTitle {
+	height: 139px;
+	padding: 47px 0 50px;
+	background: url(img/detailTitle.jpg) no-repeat left bottom;
+	border-bottom: 1px solid #ccc;
+}
+
+/*<!--商品简介的消费者反馈------------------------------------------------------------------------------>*/
+.showComment li {
+	height: 134px;
+	padding: 15px 25px 0;
+	border-bottom: 1px solid #ccc;
+	overflow: hidden;
+}
+
+.userInfo {
+	float: left;
+	width: 88px;
+	margin-right: 20px;
+}
+
+.userInfo img {
+	width: 88px;
+	height: 88px;
+	border-radius: 50%;
+}
+
+.userInfo i {
+	font-style: normal;
+	color: #ccc;
+	height: 20px;
+	line-height: 20px;
+}
+
+.criticismInfo {
+	float: left;
+	margin-top: 10px;
+	color: rgb(51, 51, 51);
+}
+
+.star,
+.comment,
+.time {
+	height: 30px;
+	overflow: hidden;
+}
+
+.showComment li p label {
+	float: left;
+	padding-left: 30px;
+	width: 50px;
+}
+
+.showComment li p span {
+	float: left;
+}
+
+.starStar {
+	width: 20px;
+	height: 20px;
+	background: url(img/collection.png) no-repeat -7px -167px;
+}
+
+.time span {
+	font-size: 12px;
+	color: gray;
+}
+
+.ulBtn {
+	height: 30px;
+	background: #eee;
+	overflow: hidden;
+}
+
+.ulBtn li {
+	width: 20px;
+	height: 30px;
+	line-height: 20px;
+	border-radius: 50%;
+	text-align: center;
+	color: #808080;
+	float: left;
+}

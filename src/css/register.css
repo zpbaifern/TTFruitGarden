@@ -1,11 +1,15 @@
 @charset "utf-8";
+
+/*<!--注册详情部分------------------------------------------------------------------------------>*/
+
 .register {
 	width: 995px;
 	height: 492px;
 	margin: 0 auto;
 	padding: 65px 0;
 }
-.register h2{
+
+.register h2 {
 	font-weight: normal;
 	color: #999999;
 	font-size: 20px;
@@ -13,19 +17,24 @@
 	border-bottom: 1px solid #CCCCCC;
 	margin-bottom: 36px;
 }
-.registerLeft{
+
+
+/*<!--注册详情左边部分------------------------------------------------------------------------------>*/
+
+.registerLeft {
 	position: relative;
 	width: 500px;
 	height: 400px;
 	float: left;
 	background: url(img/huiyuan.jpg) no-repeat;
-	background-size:cover ;
+	background-size: cover;
 }
-.login{
+
+.login {
 	position: absolute;
 	margin: 0 auto;
 	left: 174px;
-	bottom:20px;
+	bottom: 20px;
 	display: block;
 	width: 150px;
 	height: 46px;
@@ -34,47 +43,59 @@
 	border: 1px solid #64A131;
 	color: #64A131;
 	font-size: 17px;
-	border-radius:3px ;
+	border-radius: 3px;
 }
-.registerRight{
-	
+
+
+/*<!--注册详情左边部分------------------------------------------------------------------------------>*/
+
+.registerRight {
 	float: right;
 	width: 490px;
 	color: #999999;
 }
-.registerRight p{
+
+.registerRight p {
 	height: 66px;
 	line-height: 66px;
 	font-size: 15px;
 	position: relative;
 }
-.registerRight p .detection{
+
+.registerRight p .detection {
 	width: 22px;
 	height: 22px;
-	background:url(img/collection.png) no-repeat -528px 0;
+	background: url(img/collection.png) no-repeat -528px 0;
 	position: absolute;
 	right: -36px;
-	top:22px;
+	top: 22px;
 	display: none;
 }
-.registerRight i{
+
+.registerRight i {
 	float: left;
-	font-style:normal;
+	font-style: normal;
 	width: 152px;
 	height: 100%;
 	text-align: right;
 	padding-right: 38px;
 }
-.registerRight label,.registerRight label a{
+
+.registerRight label,
+.registerRight label a {
 	font-size: 15px;
 }
-.registerRight span{
+
+.registerRight span {
 	float: right;
 }
-.positionRelative{
+
+.positionRelative {
+	width:300px ;
 	position: relative;
 }
-.tNum{
+
+.tNum {
 	position: absolute;
 	display: block;
 	width: 60px;
@@ -86,36 +107,49 @@
 	font-size: 12px;
 	color: black;
 }
-.tel,.psw{
+.testNumChange{
+	position: absolute;
+	right: 0;
+	top: 18px;
+}
+.tel,
+.psw {
 	width: 298px;
 	height: 38px;
 	border: 1px solid #ccc;
 }
-.testNum{
+
+.testNum {
 	width: 266px;
 	height: 38px;
 	border: 1px solid #ccc;
 }
-.teltestNum{
+
+.teltestNum {
 	width: 298px;
 	height: 38px;
 	background: #eee;
 	border: 1px solid #ccc;
 }
-.registerRight .pullLeft{
-	
+
+.registerRight .pullLeft {
 	float: left;
 }
-.registerRight .pullRight{
+
+.registerRight .pullRight {
 	float: right;
-}.pullRight a{
+}
+
+.pullRight a {
 	text-decoration: underline;
 }
-.registerRight .pLast{
-	padding-top:15px ;
+
+.registerRight .pLast {
+	padding-top: 15px;
 	line-height: 36px;
 }
-.pLast .a1{
+
+.pLast .a1 {
 	float: left;
 	width: 143px;
 	height: 38px;
@@ -125,15 +159,15 @@
 	font-size: 17px;
 	border-radius: 3px;
 }
-.pLast .a2{
+
+.pLast .a2 {
 	float: right;
 	width: 141px;
 	height: 36px;
-	border:1px solid #64A131 ;
+	border: 1px solid #64A131;
 	text-align: center;
 	color: #64A131;
 	background: #f5ffed;
 	font-size: 17px;
 	border-radius: 3px;
 }
-

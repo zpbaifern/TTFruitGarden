@@ -17,7 +17,7 @@ jQuery(function($) {
 
 	//加载商品(懒加载)
 	$.ajaxSetup({
-		url: "../../../data/Goods.json",
+		url: "../../data/Goods.json",
 		dataType: "json",
 		success: function(res) {
 
@@ -139,81 +139,6 @@ jQuery(function($) {
 		}
 	})
 
-	//点选规格，显示对应价格
-	function typeClick() {
-
-		$(".big").on("click", function() {
-			$(this).closest("li").find(".up label").html($(this).attr("bigPriceAll"));
-			$(this).addClass("cur").siblings("label").removeClass("cur");
-		});
-		$(".small").on("click", function() {
-			$(this).closest("li").find(".up label").html($(this).attr("smallPriceAll"));
-			$(this).addClass("cur").siblings("label").removeClass("cur");
-		});
-	}
-
-	//点击小购物车图标，触发背景图运动切换，并让total+1；sum+bigPriceAll；detailFruitId=此li的xfruitId；buyList+“xfruit，bigPriceAll，1”；
-	function smallCarLogoClick() {
-
-		var $p = $(".lazy").find(".down p");
-		$.each($p, function() {
-			$(this).on("click", function(event) {
-				event.stopPropagation();
-
-				//点中的那个小购物车图标背景图切换
-				$(this).css({
-					backgroundPosition: "-514px -291px"
-				});
-
-				var detailFruitId = $(this).closest("li").attr("xfruitId");
-				setCookie("detailFruitId", detailFruitId, -1, "/");
-				var total = parseInt(getCookie("total"));
-				var sum = parseFloat(getCookie("sum"));
-				var buyList = getCookie("buyList");
-
-				setCookie("total", total + 1, -1, "/"); //1、完成第1步，更新total的cookie值
-
-				var temp = $(this).closest("li").find(".up label").html();
-				temp = temp.substring(1);
-				temp = parseFloat(temp).toFixed(2) - 0;
-				var tempStr = temp.toFixed(2);
-				sum += temp;
-				setCookie("sum", sum, -1, "/"); //2、完成第2步，更新sum的cookie值
-
-				var str = detailFruitId + "," + tempStr + ",1,";
-				var lastDouHao = buyList.lastIndexOf(",");
-				if(lastDouHao == buyList.length - 1) {
-					buyList += str;
-				} else {
-					buyList += "," + str;
-				}
-
-				console.log(buyList);
-				setCookie("buyList", buyList, -1, "/"); //3、完成第3步，更新buyList的cookie值
-
-				//购物车读取total，sum 的cookie信息
-				var total = getCookie("total") - 0;
-				var sum = getCookie("sum") - 0;
-				if(!total) {
-					total = 0;
-				}
-				if(!sum) {
-					sum = 0;
-				}
-				sum = sum.toFixed(2);
-				setCookie("total", total, -1, "/");
-				setCookie("sum", sum, -1, "/");
-				$(".carInfo label").first().html(total);
-				$(".carInfo label").last().html(sum);
-				$(".div1").find("span").html(total);
-				//显示购物车弹框
-				$(".carAlert").fadeIn();
-			})
-
-		});
-
-	}
-
 	//初始化购物车弹框的位置
 	var $carAlert = $(".carAlert");
 
@@ -224,6 +149,7 @@ jQuery(function($) {
 	//点击购物车弹窗的叉号或继续购物或键盘Enter键，就让弹窗隐藏
 	var $spanClose = $(".carAlert span");
 	var $aContinue = $(".a1");
+	//（1）x号点击
 	$spanClose.on("click", function() {
 		$carAlert.fadeOut();
 		var $littleCarLogo = $(".littleCarLogo");
@@ -232,6 +158,7 @@ jQuery(function($) {
 			backgroundPosition: "-517px -242px"
 		});
 	});
+	//（2）继续购物点击
 	$aContinue.on("click", function() {
 		$carAlert.fadeOut();
 		var $littleCarLogo = $(".littleCarLogo");
@@ -239,6 +166,7 @@ jQuery(function($) {
 			backgroundPosition: "-517px -242px"
 		});
 	});
+	//（3）回车键按下
 	$(window).on("keydown", function(e) {
 		if(e.keyCode == 13) {
 			$carAlert.fadeOut();
@@ -250,3 +178,77 @@ jQuery(function($) {
 	});
 
 });
+//-----------------------------------------------------------------------------------------
+//点选规格，高亮对应价格
+function typeClick() {
+	$(".big").on("click", function() {
+		$(this).closest("li").find(".up label").html($(this).attr("bigPriceAll"));
+		$(this).addClass("cur").siblings("label").removeClass("cur");
+	});
+	$(".small").on("click", function() {
+		$(this).closest("li").find(".up label").html($(this).attr("smallPriceAll"));
+		$(this).addClass("cur").siblings("label").removeClass("cur");
+	});
+}
+
+//点击小购物车图标，触发背景图运动切换，并让total+1；sum+bigPriceAll；detailFruitId=此li的xfruitId；buyList+“xfruit，bigPriceAll，1”；
+function smallCarLogoClick() {
+
+	var $p = $(".lazy").find(".down p");
+	$.each($p, function() {
+		$(this).on("click", function(event) {
+			event.stopPropagation();
+
+			//点中的那个小购物车图标背景图切换
+			$(this).css({
+				backgroundPosition: "-514px -291px"
+			});
+
+			var detailFruitId = $(this).closest("li").attr("xfruitId");
+			setCookie("detailFruitId", detailFruitId, -1, "/");
+			var total = parseInt(getCookie("total"));
+			var sum = parseFloat(getCookie("sum"));
+			var buyList = getCookie("buyList");
+
+			setCookie("total", total + 1, -1, "/"); //1、完成第1步，更新total的cookie值
+
+			var temp = $(this).closest("li").find(".up label").html();
+			temp = temp.substring(1);
+			temp = parseFloat(temp).toFixed(2) - 0;
+			var tempStr = temp.toFixed(2);
+			sum += temp;
+			setCookie("sum", sum, -1, "/"); //2、完成第2步，更新sum的cookie值
+
+			var str = detailFruitId + "," + tempStr + ",1,";
+			var lastDouHao = buyList.lastIndexOf(",");
+			if(lastDouHao == buyList.length - 1) {
+				buyList += str;
+			} else {
+				buyList += "," + str;
+			}
+
+			console.log(buyList);
+			setCookie("buyList", buyList, -1, "/"); //3、完成第3步，更新buyList的cookie值
+
+			//购物车读取total，sum 的cookie信息，更新对应的数据
+			var total = getCookie("total") - 0;
+			var sum = getCookie("sum") - 0;
+			if(!total) {
+				total = 0;
+			}
+			if(!sum) {
+				sum = 0;
+			}
+			sum = sum.toFixed(2);
+			setCookie("total", total, -1, "/");
+			setCookie("sum", sum, -1, "/");
+			$(".carInfo label").first().html(total);
+			$(".carInfo label").last().html(sum);
+			$(".div1").find("span").html(total);
+			//显示购物车弹框
+			$(".carAlert").fadeIn();
+		})
+
+	});
+
+}
