@@ -18,13 +18,15 @@ jQuery(function($) {
 	var $li1 = $carouselUl1.find("li");
 	var len = $li1.length;
 	var $carouselUl2 = $(".carouselUl2");
-
+	
+	
 	$.each($li1, function(idx, ele) {
 		$carouselUl2.append($("<li/>"));
 	});
 	var $li2 = $carouselUl2.find("li");
 	$carouselUl2.css({
-		"margin-left": -$carouselUl2.width() / 2
+		"width":$carouselUl2.width()/2,
+		"margin-left": -$carouselUl2.width() / 4,
 	});
 
 	$li2.css({
@@ -52,31 +54,36 @@ jQuery(function($) {
 	//轮播到下一张
 	function move() {
 		i++;
-		nextCheck();
 		show();
 	}
-	//检查是否最后一张
-	function nextCheck() {
-		if(i >= len) {
-			i = 0
-		}
-		if(i < 0) {
-			i = len
-		}
-	}
+	
 	//ul改变定位位置，实现轮播效果
 	function show() {
 		$carouselUl1.animate({
 			left: -i * $(window).width()
-		});
+		},nextCheck);
 		$li2.css({
-			background: "url(css/img/collection.png) no-repeat 0 0"
-		}).eq(i).css({
-			background: "url(css/img/collection.png) no-repeat 0 -19px"
-		});
-
+				background: "url(css/img/collection.png) no-repeat 0 0"
+			}).eq(i).css({
+				background: "url(css/img/collection.png) no-repeat 0 -19px"
+			});
+		if(i==len/2){
+			$li2.css({
+				background: "url(css/img/collection.png) no-repeat 0 0"
+			}).eq(0).css({
+				background: "url(css/img/collection.png) no-repeat 0 -19px"
+			});
+		}
 	}
-
+	//检查是否最后一张
+	function nextCheck() {
+		if(i >= len/2) {
+			i = 0;
+			$carouselUl1.css({"left":0});
+			
+		}
+	}
+	
 	//Ajax加载商品
 	//列表1 
 

@@ -12,14 +12,14 @@
 }
 /*<!--在轮播的大图所在的ul------------------------------------------------------------------------------>*/
 .carouselUl1 {
-	width: 800%;
+	width: 1600%;
 	position: absolute;
 }
 
 .carouselUl1 li {
 	float: left;
 	height: 400px;
-	width: 12.5%;
+	width: 6.25%;
 }
 
 .carouselUl1 li a {
@@ -40,7 +40,7 @@
 	position: absolute;
 	left: 50%;
 	bottom: 24px;
-	height: 40px;
+	height: 18px;
 	overflow: hidden;
 	z-index: 10;
 }
