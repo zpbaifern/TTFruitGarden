@@ -21,12 +21,13 @@ jQuery(function($) {
 	
 	
 	$.each($li1, function(idx, ele) {
+		if(idx >= $li1.length/2){return}
 		$carouselUl2.append($("<li/>"));
 	});
 	var $li2 = $carouselUl2.find("li");
 	$carouselUl2.css({
-		"width":$carouselUl2.width()/2,
-		"margin-left": -$carouselUl2.width() / 4,
+		"width":$carouselUl2.width(),
+		"margin-left": -$carouselUl2.width() / 2,
 	});
 
 	$li2.css({
@@ -38,13 +39,15 @@ jQuery(function($) {
 	});
 	var i = 0;
 	var timer;
-
+	
+	//设置鼠标悬停在轮播图上是，停止轮播的效果
 	$carouselUl1.on("mouseenter", function() {
 		clearInterval(timer);
 	}).on("mouseleave", function() {
 		timer = setInterval(move, 2000);
 	}).trigger("mouseleave");
 
+	//设置点击小序标，图片立即切换到位的效果
 	$li2.on("click", function() {
 		clearInterval(timer);
 		i = $(this).index();
@@ -80,7 +83,6 @@ jQuery(function($) {
 		if(i >= len/2) {
 			i = 0;
 			$carouselUl1.css({"left":0});
-			
 		}
 	}
 	

@@ -178,15 +178,21 @@ jQuery(function($) {
 			$("#showImg").css({
 				display: "block"
 			});
-			$("#showComment").css({
+			$(".customer").css({
+				display: "none"
+			});
+			$(".detailTitle").css({
 				display: "none"
 			});
 		} else if($(this).index() == 1) {
 			$("#showImg").css({
 				display: "none"
 			});
-			$("#showComment").css({
+			$(".customer").css({
 				display: "block"
+			});
+			$(".detailTitle").css({
+				display:"block"
 			});
 		}
 	});
